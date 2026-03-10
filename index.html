@@ -1,68 +1,35 @@
-<!--
-╔══════════════════════════════════════════════════════════════════════╗
-║              THE KOSHER MOOR — SOVEREIGN MARKETPLACE                ║
-║                    PUBLISH-READY BUILD v1.0                         ║
-╠══════════════════════════════════════════════════════════════════════╣
-║  BEFORE GOING LIVE — complete these final steps:                    ║
-║                                                                     ║
-║  1. ADMIN LOGIN                                                     ║
-║     • Access: Ctrl+Shift+Alt+A on the live site                    ║
-║     • Username: km_owner                                            ║
-║     • Password: KM_Owner_2026!  (change this FIRST)                ║
-║     • 2FA backup code: see ADMIN_CREDS.totpBackupCode in JS         ║
-║     • Generate your own hash at: sha256.online                      ║
-║                                                                     ║
-║  2. DOMAIN & SEO                                                    ║
-║     • Replace thekoshermoor.com with your real domain everywhere    ║
-║     • Upload a 1200x630px og-image.jpg to your server               ║
-║     • Submit sitemap to Google Search Console after launch          ║
-║                                                                     ║
-║  3. PAYMENTS                                                        ║
-║     • Verify Cash App: $TheKosherMoor                               ║
-║     • Verify Venmo: @TheKosherMoor                                  ║
-║     • Verify Zelle: payments@thekoshermoor.com                      ║
-║     • Replace example BTC/ETH wallets with your real addresses      ║
-║     • Connect Mailchimp or Klaviyo in Email Campaigns admin tab      ║
-║                                                                     ║
-║  4. CONTENT                                                         ║
-║     • Add your real phone number via admin Products tab             ║
-║     • Update business address in AI system prompt (KM_SYSTEM_PROMPT)║
-║     • Add your real product photos via admin drag-and-drop          ║
-║                                                                     ║
-║  5. DEPLOY                                                          ║
-║     • Netlify: drag this file to netlify.com/drop (2 min)          ║
-║     • GitHub Pages: rename to index.html, push to repo              ║
-║     • Create _headers file for security headers (see below)         ║
-╚══════════════════════════════════════════════════════════════════════╝
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  // Force HTTPS — must run before anything else
+  if(location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1'){
+    location.replace('https:' + location.href.substring(location.protocol.length));
+  }
+</script>
+
 <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://api.anthropic.com; img-src 'self' data: blob: https:; connect-src 'self' https:;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Kosher Moor — Sovereign Herbal Marketplace | Teas, Tinctures &amp; Consulting</title>
-  <!-- ═══ SEO META ═══ -->
   <meta name="description" content="The Kosher Moor is a sovereign herbal marketplace offering premium teas, tinctures, herbal supplements, merch, lawn care, mobile auto service, and transformative consulting. Heritage-driven. Purpose-built.">
   <meta name="keywords" content="herbal tea, tinctures, herbal supplements, sovereign marketplace, lawn care, mobile tire service, business consulting, kosher moor">
   <meta name="author" content="The Kosher Moor">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://thekoshermoor.com/">
-  <!-- ═══ OPEN GRAPH ═══ -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thekoshermoor.com/">
   <meta property="og:title" content="The Kosher Moor — Sovereign Herbal Marketplace">
   <meta property="og:description" content="Heritage-driven herbal products, curated merch, lawn care, mobile tire service, and sovereign business consulting. Experience the Moor.">
   <meta property="og:image" content="https://thekoshermoor.com/og-image.jpg"><!-- PUBLISH TASK: Upload a 1200x630px brand image to your server and update this URL -->
   <meta property="og:site_name" content="The Kosher Moor">
-  <!-- ═══ TWITTER CARD ═══ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Kosher Moor — Sovereign Marketplace">
   <meta name="twitter:description" content="Herbal teas, tinctures, supplements, merch, lawn care, mobile tire service and business consulting.">
   <meta name="twitter:image" content="https://thekoshermoor.com/og-image.jpg"><!-- PUBLISH TASK: Upload a 1200x630px brand image to your server and update this URL -->
-  <!-- ═══ SCHEMA.ORG — Store ═══ -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Store","name":"The Kosher Moor","url":"https://thekoshermoor.com","email":"info@thekoshermoor.com","sameAs":["https://instagram.com/thekoshermoor","https://facebook.com/thekoshermoor"],"description":"Sovereign herbal marketplace offering premium teas, tinctures, supplements, merch, lawn care, mobile tire service, and business consulting.","priceRange":"$$","currenciesAccepted":"USD","paymentAccepted":"Credit Card, PayPal, Cash App, Venmo, Zelle","openingHours":["Mo-Fr 09:00-19:00","Sa 10:00-18:00"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Sovereign Products and Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Herbal Teas and Blends"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Tinctures and Elixirs"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Lawn Care"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile Tire Service"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Business Consulting"}}]}}
   </script>
@@ -128,8 +95,6 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none; z-index: 9999; opacity: 0.6;
   }
-
-  /* ═══ NAVBAR ═══ */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
     padding: 0 4rem;
@@ -183,8 +148,6 @@
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
   }
   .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
-
-  /* ═══ HERO ═══ */
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column;
@@ -375,8 +338,6 @@
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  /* ═══ MARQUEE TICKER ═══ */
   .ticker {
     background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
     padding: 0.7rem 0; overflow: hidden;
@@ -398,8 +359,6 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
-
-  /* ═══ SECTION COMMONS ═══ */
   section { position: relative; overflow: hidden; }
   .section-container { max-width: 1600px; margin: 0 auto; padding: 6rem 4rem; }
   .section-header { text-align: center; margin-bottom: 4rem; }
@@ -425,8 +384,6 @@
     max-width: 600px; margin: 0 auto;
     line-height: 1.8; font-style: italic;
   }
-
-  /* ═══ AI AGENTS SECTION ═══ */
   .agents-section { background: var(--charcoal); }
   .agents-section::before {
     content: ''; position: absolute; inset: 0;
@@ -543,8 +500,6 @@
   .agent-feature p {
     font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;
   }
-
-  /* ═══ PRODUCTS SECTION ═══ */
   .products-section { background: var(--obsidian); }
 
   .product-categories {
@@ -644,8 +599,6 @@
     display: flex; gap: 2px; margin-bottom: 0.4rem;
     color: var(--gold); font-size: 0.6rem;
   }
-
-  /* ═══ SERVICES SECTION ═══ */
   .services-section { background: var(--emerald); }
   .services-section::before {
     content: ''; position: absolute; inset: 0;
@@ -698,8 +651,6 @@
     display: flex; align-items: center; gap: 0.5rem;
   }
   .service-features li::before { content: '›'; font-size: 0.8rem; }
-
-  /* ═══ MERCH SECTION ═══ */
   .merch-section { background: var(--charcoal); }
   .merch-showcase {
     display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
@@ -762,8 +713,6 @@
     color: var(--gold);
   }
   .merch-item span { font-size: 1.5rem; }
-
-  /* ═══ CONSULTING SECTION ═══ */
   .consulting-section {
     background: linear-gradient(135deg, var(--obsidian) 0%, var(--emerald) 100%);
   }
@@ -825,8 +774,6 @@
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     font-size: 1.2rem; top: -20px; left: 50%; transform: translateX(-50%);
   }
-
-  /* ═══ DELIVERY SECTION ═══ */
   .delivery-section { background: var(--obsidian); }
   .delivery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; }
   .delivery-card {
@@ -879,8 +826,6 @@
   }
   .map-content p { font-size: 0.9rem; color: var(--text-muted); }
   .map-pin { font-size: 3rem; animation: float 2s ease-in-out infinite; display: block; }
-
-  /* ═══ TESTIMONIALS ═══ */
   .testimonials-section { background: var(--charcoal); }
   .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
   .testimonial-card {
@@ -917,450 +862,6 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.45rem; color: var(--text-muted); letter-spacing: 0.1em;
   }
-
-  /* ═══ AI CHAT WIDGET ═══ */
-  .chat-widget {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 500;
-  }
-  .chat-trigger {
-    width: 70px; height: 70px;
-    background: linear-gradient(135deg, var(--emerald-mid), var(--gold-dark));
-    border: 2px solid var(--gold);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 1.8rem; cursor: none;
-    box-shadow: 0 8px 30px rgba(200,169,81,0.3);
-    animation: brainPulse 3s ease infinite;
-    transition: transform 0.3s;
-  }
-  .chat-trigger:hover { transform: scale(1.1); }
-  .chat-panel {
-    position: absolute; bottom: 80px; right: 0;
-    width: 380px; background: var(--charcoal);
-    border: 1px solid rgba(200,169,81,0.3);
-    box-shadow: var(--shadow-deep);
-    display: none; flex-direction: column;
-    overflow: hidden;
-  }
-  .chat-panel.open { display: flex; }
-  .chat-header {
-    background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
-    padding: 1rem 1.2rem;
-    border-bottom: 1px solid rgba(200,169,81,0.2);
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .chat-header-icon { font-size: 1.5rem; }
-  .chat-header-info { flex: 1; }
-  .chat-header-name {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 0.7rem; color: var(--gold); display: block;
-  }
-  .chat-header-status {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.45rem; color: var(--emerald-light);
-    letter-spacing: 0.1em;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .chat-header-status::before {
-    content: ''; width: 6px; height: 6px;
-    background: #4CAF50; border-radius: 50%;
-    animation: pulse 2s ease infinite;
-  }
-  .chat-close {
-    background: none; border: none;
-    color: var(--text-muted); font-size: 1.2rem; cursor: none;
-  }
-  .chat-messages {
-    height: 300px; overflow-y: auto; padding: 1rem;
-    display: flex; flex-direction: column; gap: 0.8rem;
-  }
-  .chat-messages::-webkit-scrollbar { width: 4px; }
-  .chat-messages::-webkit-scrollbar-track { background: transparent; }
-  .chat-messages::-webkit-scrollbar-thumb { background: rgba(200,169,81,0.3); border-radius: 2px; }
-  .chat-msg {
-    max-width: 85%; padding: 0.7rem 0.9rem;
-    font-size: 0.82rem; line-height: 1.5;
-  }
-  .chat-msg.bot {
-    background: rgba(29,74,46,0.4);
-    border: 1px solid rgba(200,169,81,0.1);
-    color: var(--text-light); align-self: flex-start;
-    border-radius: 0 8px 8px 8px;
-  }
-  .chat-msg.user {
-    background: rgba(200,169,81,0.2);
-    border: 1px solid rgba(200,169,81,0.3);
-    color: var(--cream); align-self: flex-end;
-    border-radius: 8px 0 8px 8px;
-    font-family: 'Cormorant Garamond', serif;
-  }
-  .chat-quick-btns {
-    padding: 0.5rem 1rem; display: flex; gap: 0.4rem; flex-wrap: wrap;
-    border-top: 1px solid rgba(200,169,81,0.1);
-  }
-  .chat-quick-btn {
-    padding: 0.3rem 0.6rem; background: rgba(200,169,81,0.08);
-    border: 1px solid rgba(200,169,81,0.2); color: var(--gold);
-    font-family: 'Space Mono', monospace; font-size: 0.45rem;
-    letter-spacing: 0.05em; cursor: none; transition: all 0.2s;
-    text-transform: uppercase;
-  }
-  .chat-quick-btn:hover { background: rgba(200,169,81,0.2); }
-  .chat-input-row {
-    display: flex; gap: 0.5rem; padding: 0.8rem;
-    border-top: 1px solid rgba(200,169,81,0.1);
-  }
-  .chat-input {
-    flex: 1; background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(200,169,81,0.2);
-    color: var(--cream); padding: 0.6rem 0.8rem;
-    font-family: 'Cormorant Garamond', serif; font-size: 0.85rem;
-    outline: none;
-  }
-  .chat-input::placeholder { color: var(--text-muted); }
-  .chat-send {
-    background: var(--gold); color: var(--obsidian);
-    border: none; padding: 0.6rem 1rem;
-    font-family: 'Space Mono', monospace; font-size: 0.6rem;
-    cursor: none; transition: all 0.2s;
-    font-weight: 700;
-  }
-  .chat-send:hover { background: var(--gold-light); }
-  .chat-typing {
-    display: flex; gap: 4px; align-items: center; padding: 0.5rem;
-  }
-  .typing-dot {
-    width: 6px; height: 6px;
-    background: var(--gold); border-radius: 50%;
-    animation: typingPulse 1.2s ease infinite;
-  }
-  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes typingPulse {
-    0%,100% { opacity: 0.3; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1); }
-  }
-
-  /* ═══ NEWSLETTER/CTA SECTION ═══ */
-  .cta-section {
-    background: var(--emerald);
-    position: relative; overflow: hidden;
-    text-align: center;
-  }
-  .cta-section::before {
-    content: ''; position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% 50%, rgba(200,169,81,0.1), transparent),
-      radial-gradient(ellipse 40% 40% at 0% 0%, rgba(0,0,0,0.3), transparent),
-      radial-gradient(ellipse 40% 40% at 100% 100%, rgba(0,0,0,0.3), transparent);
-  }
-  .cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-  .cta-content h2 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(1.5rem, 3vw, 3rem); color: var(--cream);
-    margin-bottom: 1rem; line-height: 1.2;
-  }
-  .cta-content h2 .gold { color: var(--gold); }
-  .cta-content p {
-    font-size: 1.1rem; color: rgba(245,237,216,0.7);
-    margin-bottom: 2.5rem; font-style: italic; line-height: 1.7;
-  }
-  .cta-form { display: flex; gap: 0; max-width: 500px; margin: 0 auto; }
-  .cta-email {
-    flex: 1; padding: 1rem 1.5rem;
-    background: rgba(0,0,0,0.4);
-    border: 1px solid rgba(200,169,81,0.3); border-right: none;
-    color: var(--cream);
-    font-family: 'Cormorant Garamond', serif; font-size: 1rem;
-    outline: none;
-  }
-  .cta-email::placeholder { color: rgba(200,169,81,0.4); font-style: italic; }
-  .cta-submit {
-    background: var(--gold); color: var(--obsidian); border: none;
-    padding: 1rem 2rem;
-    font-family: 'Cinzel Decorative', serif; font-size: 0.6rem;
-    letter-spacing: 0.1em; cursor: none;
-    transition: all 0.3s;
-  }
-  .cta-submit:hover { background: var(--gold-light); }
-
-  /* ═══ FOOTER ═══ */
-  footer {
-    background: var(--obsidian);
-    border-top: 1px solid rgba(200,169,81,0.15);
-  }
-  .footer-top {
-    max-width: 1600px; margin: 0 auto;
-    padding: 5rem 4rem 3rem;
-    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 3rem;
-  }
-  .footer-brand { }
-  .footer-logo {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 1.2rem; color: var(--gold);
-    text-shadow: var(--shadow-gold);
-    display: block; margin-bottom: 1rem; line-height: 1.2;
-  }
-  .footer-brand p {
-    font-size: 0.85rem; color: var(--text-muted);
-    line-height: 1.7; font-style: italic;
-  }
-  .footer-social {
-    display: flex; gap: 0.8rem; margin-top: 1.5rem;
-  }
-  .social-link {
-    width: 36px; height: 36px;
-    border: 1px solid rgba(200,169,81,0.3);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; color: var(--text-muted);
-    transition: all 0.3s; text-decoration: none; cursor: none;
-  }
-  .social-link:hover { border-color: var(--gold); color: var(--gold); background: rgba(200,169,81,0.1); }
-  .footer-col h4 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 0.65rem; color: var(--gold);
-    letter-spacing: 0.1em; margin-bottom: 1.2rem;
-  }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-  .footer-col ul a {
-    font-size: 0.82rem; color: var(--text-muted);
-    text-decoration: none; transition: color 0.2s;
-    font-style: italic;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .footer-col ul a::before { content: '›'; color: var(--gold); opacity: 0; transition: opacity 0.2s; }
-  .footer-col ul a:hover { color: var(--gold); }
-  .footer-col ul a:hover::before { opacity: 1; }
-  .footer-bottom {
-    max-width: 1600px; margin: 0 auto;
-    padding: 1.5rem 4rem;
-    border-top: 1px solid rgba(200,169,81,0.08);
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-bottom p {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.5rem; color: var(--text-muted);
-    letter-spacing: 0.1em;
-  }
-  .footer-bottom-links {
-    display: flex; gap: 2rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.5rem;
-  }
-  .footer-bottom-links a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; cursor: none; }
-  .footer-bottom-links a:hover { color: var(--gold); }
-
-  /* ═══ RESPONSIVE ═══ */
-  @media (max-width: 1200px) {
-    .agents-grid { grid-template-columns: repeat(4, 1fr); }
-    .products-grid { grid-template-columns: repeat(3, 1fr); }
-    .footer-top { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 900px) {
-    nav { padding: 0 1.5rem; }
-    .nav-links { display: none; }
-    .section-container { padding: 4rem 1.5rem; }
-    .agents-grid { grid-template-columns: repeat(3, 1fr); }
-    .products-grid { grid-template-columns: repeat(2, 1fr); }
-    .services-grid { grid-template-columns: 1fr; }
-    .merch-showcase { grid-template-columns: 1fr; }
-    .merch-visual { height: 300px; }
-    .consulting-split { grid-template-columns: 1fr; }
-    .delivery-grid { grid-template-columns: 1fr; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .agent-features { grid-template-columns: 1fr 1fr; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; padding: 3rem 1.5rem; }
-    .footer-bottom { padding: 1rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-  }
-  @media (max-width: 600px) {
-    .agents-grid { grid-template-columns: repeat(2, 1fr); }
-    .products-grid { grid-template-columns: 1fr; }
-    .agent-features { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr; }
-    .hero-stats { gap: 1.5rem; }
-    .cta-form { flex-direction: column; }
-    .cta-email { border-right: 1px solid rgba(200,169,81,0.3); border-bottom: none; }
-    .chat-panel { width: 320px; }
-  }
-
-  /* Scroll reveal */
-  .reveal {
-    opacity: 0; transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* Product BG gradients */
-  .bg-tea { background: linear-gradient(135deg, #1A3A1A, #2D5A1A); }
-  .bg-tincture { background: linear-gradient(135deg, #3A1A1A, #5A2A1A); }
-  .bg-herb { background: linear-gradient(135deg, #1A3A2A, #1A5A3A); }
-  .bg-merch { background: linear-gradient(135deg, #1A1A3A, #2A1A5A); }
-  .bg-care { background: linear-gradient(135deg, #3A2A1A, #5A3A1A); }
-  .bg-consult { background: linear-gradient(135deg, #1A2A3A, #1A3A5A); }
-  .bg-lawn { background: linear-gradient(135deg, #1A3A1A, #2A5A1A); }
-  .bg-auto { background: linear-gradient(135deg, #2A1A1A, #3A1A1A); }
-
-  /* ═══ MODALS ═══ */
-  .modal-overlay {
-    position:fixed;inset:0;z-index:9000;background:rgba(0,0,0,0.88);
-    backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:1rem;
-  }
-  .modal-overlay.open{display:flex;}
-  .modal-box {
-    background:var(--charcoal);border:1px solid rgba(200,169,81,0.35);
-    width:100%;max-width:760px;max-height:92vh;overflow-y:auto;position:relative;
-    box-shadow:0 0 80px rgba(200,169,81,0.15),var(--shadow-deep);
-  }
-  .modal-box::-webkit-scrollbar{width:4px;}
-  .modal-box::-webkit-scrollbar-thumb{background:rgba(200,169,81,0.3);border-radius:2px;}
-  .modal-header {
-    background:linear-gradient(135deg,var(--emerald),var(--emerald-mid));
-    padding:1.4rem 2rem;border-bottom:1px solid rgba(200,169,81,0.2);
-    display:flex;align-items:center;gap:1rem;position:sticky;top:0;z-index:1;
-  }
-  .modal-header-icon{font-size:1.8rem;}
-  .modal-header-info{flex:1;}
-  .modal-title{font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--gold);display:block;}
-  .modal-sub{font-family:'Space Mono',monospace;font-size:0.42rem;color:var(--emerald-light);letter-spacing:0.15em;margin-top:2px;display:block;}
-  .modal-close{margin-left:auto;background:none;border:none;color:var(--text-muted);font-size:1.4rem;cursor:none;transition:color 0.2s;}
-  .modal-close:hover{color:var(--gold);}
-  .modal-body{padding:1.8rem 2rem;}
-  .modal-footer{padding:1rem 2rem 1.5rem;border-top:1px solid rgba(200,169,81,0.1);display:flex;gap:1rem;justify-content:flex-end;flex-wrap:wrap;}
-
-  /* Form elements */
-  .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
-  .frow.full{grid-template-columns:1fr;}
-  .fg{display:flex;flex-direction:column;gap:0.35rem;}
-  .fg label{font-family:'Space Mono',monospace;font-size:0.48rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
-  .fg input,.fg select,.fg textarea{
-    background:rgba(255,255,255,0.04);border:1px solid rgba(200,169,81,0.2);
-    color:var(--cream);padding:0.65rem 0.85rem;
-    font-family:'Cormorant Garamond',serif;font-size:0.95rem;outline:none;
-    transition:border-color 0.2s;width:100%;
-  }
-  .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(200,169,81,0.1);}
-  .fg select{cursor:none;}.fg select option{background:var(--charcoal);color:var(--cream);}
-  .fg textarea{resize:vertical;min-height:80px;}
-  .fg input::placeholder,.fg textarea::placeholder{color:rgba(200,169,81,0.3);font-style:italic;}
-  .fdiv{font-family:'Space Mono',monospace;font-size:0.48rem;letter-spacing:0.3em;color:var(--text-muted);text-transform:uppercase;text-align:center;margin:1.4rem 0;display:flex;align-items:center;gap:1rem;}
-  .fdiv::before,.fdiv::after{content:'';flex:1;height:1px;background:rgba(200,169,81,0.12);}
-  .success-flash{background:rgba(29,74,46,0.4);border:1px solid rgba(61,139,90,0.4);padding:0.8rem 1rem;margin-top:1rem;font-family:'Space Mono',monospace;font-size:0.52rem;letter-spacing:0.1em;color:var(--emerald-light);text-align:center;display:none;}
-
-  /* Admin tabs */
-  .admin-tabs{display:flex;border-bottom:1px solid rgba(200,169,81,0.15);margin-bottom:1.5rem;gap:0;flex-wrap:wrap;}
-  .atab{padding:0.65rem 1.1rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:0.48rem;letter-spacing:0.12em;text-transform:uppercase;cursor:none;transition:all 0.2s;}
-  .atab.active{color:var(--gold);border-bottom-color:var(--gold);}
-  .atab-content{display:none;}.atab-content.active{display:block;}
-
-  /* Upload drop */
-  .upload-drop{border:2px dashed rgba(200,169,81,0.25);padding:2rem;text-align:center;margin-bottom:1.5rem;transition:all 0.3s;}
-  .upload-drop:hover,.upload-drop.over{border-color:var(--gold);background:rgba(200,169,81,0.05);}
-  .upload-drop p{font-size:0.85rem;color:var(--text-muted);font-style:italic;margin-top:0.5rem;}
-  .upload-drop strong{color:var(--gold);font-style:normal;}
-
-  /* Admin table */
-  .atbl{width:100%;border-collapse:collapse;margin-top:1rem;}
-  .atbl th{font-family:'Space Mono',monospace;font-size:0.44rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:0.55rem 0.7rem;border-bottom:1px solid rgba(200,169,81,0.2);text-align:left;}
-  .atbl td{padding:0.55rem 0.7rem;font-size:0.82rem;border-bottom:1px solid rgba(200,169,81,0.07);color:var(--text-light);}
-  .atbl tr:hover td{background:rgba(200,169,81,0.04);}
-  .tbadge{font-family:'Space Mono',monospace;font-size:0.38rem;padding:0.12rem 0.38rem;letter-spacing:0.08em;text-transform:uppercase;}
-  .tbadge.tea{background:rgba(29,74,46,0.5);color:var(--emerald-light);}
-  .tbadge.tincture{background:rgba(90,20,20,0.5);color:#E87070;}
-  .tbadge.herb{background:rgba(20,60,40,0.5);color:var(--emerald-light);}
-  .tbadge.merch{background:rgba(20,20,90,0.5);color:#9898E8;}
-  .tbadge.care{background:rgba(80,60,10,0.5);color:var(--gold-light);}
-  .tact{background:none;border:1px solid rgba(200,169,81,0.2);color:var(--text-muted);padding:0.22rem 0.45rem;font-family:'Space Mono',monospace;font-size:0.38rem;cursor:none;transition:all 0.2s;}
-  .tact:hover{border-color:var(--gold);color:var(--gold);}
-  .tact.del:hover{border-color:#E87070;color:#E87070;}
-
-  /* Stat pills */
-  .stat-pills{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
-  .stat-pill{background:rgba(200,169,81,0.08);border:1px solid rgba(200,169,81,0.2);padding:0.8rem 1.2rem;flex:1;min-width:120px;text-align:center;}
-  .spn{font-family:'Cinzel Decorative',serif;font-size:1.5rem;color:var(--gold);display:block;}
-  .spl{font-family:'Space Mono',monospace;font-size:0.42rem;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;}
-
-  /* Consulting AI steps */
-  .csteps{display:flex;gap:0;margin-bottom:1.8rem;flex-wrap:wrap;}
-  .cstep{flex:1;min-width:80px;text-align:center;padding:0.65rem 0.5rem;background:rgba(0,0,0,0.2);border:1px solid rgba(200,169,81,0.1);border-right:none;font-family:'Space Mono',monospace;font-size:0.42rem;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;transition:all 0.3s;}
-  .cstep:last-child{border-right:1px solid rgba(200,169,81,0.1);}
-  .cstep.active{background:rgba(200,169,81,0.12);color:var(--gold);border-color:rgba(200,169,81,0.4);}
-  .cstep.done{background:rgba(29,74,46,0.3);color:var(--emerald-light);}
-  .cstep-n{display:block;font-size:0.85rem;font-family:'Cinzel Decorative',serif;margin-bottom:0.2rem;}
-  .cpage{display:none;}.cpage.active{display:block;}
-  .ai-thinking{background:rgba(29,74,46,0.25);border:1px solid rgba(61,139,90,0.25);padding:0.9rem;margin:1rem 0;display:flex;align-items:center;gap:0.8rem;font-size:0.82rem;color:var(--emerald-light);font-style:italic;}
-  .score-box{background:rgba(200,169,81,0.07);border:1px solid rgba(200,169,81,0.18);padding:1.1rem;margin:1rem 0;}
-  .score-box h4{font-family:'Cinzel Decorative',serif;font-size:0.68rem;color:var(--gold);margin-bottom:0.8rem;}
-  .sbar{margin-bottom:0.55rem;}
-  .sbar-lbl{font-family:'Space Mono',monospace;font-size:0.42rem;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:0.22rem;display:flex;justify-content:space-between;}
-  .sbar-track{height:5px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;}
-  .sbar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold));border-radius:3px;transition:width 1.2s ease;width:0%;}
-
-  /* Lead pop */
-  .lead-pop{position:fixed;bottom:6rem;right:90px;z-index:800;width:300px;background:var(--charcoal);border:1px solid rgba(200,169,81,0.35);box-shadow:var(--shadow-deep);transform:translateX(130%);opacity:0;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);}
-  .lead-pop.show{transform:translateX(0);opacity:1;}
-  .lp-header{background:linear-gradient(135deg,var(--emerald),var(--emerald-mid));padding:0.75rem 1rem;display:flex;align-items:center;gap:0.6rem;border-bottom:1px solid rgba(200,169,81,0.2);}
-  .lp-title{font-family:'Cinzel Decorative',serif;font-size:0.58rem;color:var(--gold);flex:1;}
-  .lp-close{background:none;border:none;color:var(--text-muted);cursor:none;font-size:0.9rem;}
-  .lp-body{padding:1rem;}
-  .lp-body p{font-size:0.8rem;color:var(--text-muted);line-height:1.5;margin-bottom:0.7rem;font-style:italic;}
-  .lp-offer{font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--gold);display:block;margin-bottom:0.75rem;text-align:center;}
-  .lp-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(200,169,81,0.2);color:var(--cream);padding:0.55rem 0.75rem;font-family:'Cormorant Garamond',serif;font-size:0.9rem;outline:none;margin-bottom:0.45rem;display:block;}
-  .lp-input::placeholder{color:rgba(200,169,81,0.3);font-style:italic;}
-  .lp-submit{width:100%;background:var(--gold);color:var(--obsidian);border:none;padding:0.6rem;font-family:'Cinzel Decorative',serif;font-size:0.58rem;letter-spacing:0.1em;cursor:none;transition:all 0.3s;}
-  .lp-submit:hover{background:var(--gold-light);}
-  .lp-fine{font-family:'Space Mono',monospace;font-size:0.36rem;color:var(--text-muted);text-align:center;margin-top:0.45rem;letter-spacing:0.05em;}
-
-  /* Storage indicator */
-  .storage-bar{margin:1rem 0;}
-  .storage-bar-track{height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;margin-top:0.4rem;}
-  .storage-bar-fill{height:100%;background:linear-gradient(90deg,var(--emerald-mid),var(--gold));border-radius:4px;}
-
-  /* ═══ ABOUT SECTION ═══ */
-  .about-section { background:var(--charcoal); }
-  .about-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(29,74,46,0.3),transparent); }
-  .about-split { display:grid; grid-template-columns:1fr 1.2fr; gap:5rem; align-items:center; }
-  .about-visual { position:relative; height:480px; display:flex; align-items:center; justify-content:center; }
-  .about-emblem { position:relative; z-index:1; text-align:center; }
-  .about-crest { font-size:8rem; display:block; filter:drop-shadow(0 10px 30px rgba(200,169,81,0.3)); animation:floatOrb 6s ease-in-out infinite; }
-  .about-ring { position:absolute; border-radius:50%; border:1px solid rgba(200,169,81,0.15); top:50%; left:50%; }
-  .about-ring-1 { width:200px; height:200px; transform:translate(-50%,-50%); }
-  .about-ring-2 { width:300px; height:300px; border-style:dashed; animation:spinRing 20s linear infinite; }
-  .about-ring-3 { width:420px; height:420px; animation:spinRing 30s linear infinite reverse; }
-  @keyframes spinRing { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)} }
-  .about-content h2 { font-family:'Cinzel Decorative',serif; font-size:clamp(1.5rem,3vw,2.8rem); color:var(--cream); margin-bottom:1.5rem; line-height:1.2; }
-  .about-content h2 em { color:var(--gold); font-style:normal; }
-  .about-content > p { font-size:1rem; color:var(--text-muted); line-height:1.8; margin-bottom:1rem; font-style:italic; }
-  .about-values { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
-  .about-value { background:rgba(200,169,81,0.05); border:1px solid rgba(200,169,81,0.15); padding:1rem; display:flex; align-items:flex-start; gap:0.8rem; transition:all 0.3s; }
-  .about-value:hover { background:rgba(200,169,81,0.1); border-color:rgba(200,169,81,0.3); transform:translateY(-2px); }
-  .about-value-icon { font-size:1.5rem; flex-shrink:0; }
-  .about-value h4 { font-family:'Cinzel Decorative',serif; font-size:0.62rem; color:var(--gold); margin-bottom:0.3rem; }
-  .about-value p { font-size:0.8rem; color:var(--text-muted); line-height:1.5; }
-
-  /* ═══ HOURS SECTION ═══ */
-  .hours-section { background:linear-gradient(135deg,var(--obsidian) 0%,var(--emerald) 100%); }
-  .hours-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
-  .hours-card { background:rgba(0,0,0,0.3); border:1px solid rgba(200,169,81,0.15); padding:2rem; transition:all 0.3s; }
-  .hours-card:hover { border-color:rgba(200,169,81,0.4); transform:translateY(-4px); }
-  .hours-day { font-family:'Cinzel Decorative',serif; font-size:0.8rem; color:var(--gold); display:block; margin-bottom:0.5rem; }
-  .hours-time { font-size:1.4rem; color:var(--cream); display:block; font-weight:600; margin-bottom:0.3rem; }
-  .hours-note { font-family:'Space Mono',monospace; font-size:0.45rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; }
-  .hours-status { display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.5rem; font-family:'Space Mono',monospace; font-size:0.48rem; letter-spacing:0.1em; text-transform:uppercase; }
-  .status-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-  .status-dot.open { background:#4CAF50; animation:pulse 2s ease infinite; }
-  .status-dot.closed { background:#888; }
-
-  /* ═══ FOOTER POLICY BTN ═══ */
-  .footer-policy-btn { background:none; border:none; color:var(--text-muted); font-family:'Space Mono',monospace; font-size:0.5rem; cursor:none; letter-spacing:0.05em; padding:0; transition:color 0.2s; }
-  .footer-policy-btn:hover { color:var(--gold); }
-
-  /* ═══ RESPONSIVE ADDITIONS ═══ */
-  @media (max-width:900px) {
-    .about-split { grid-template-columns:1fr; }
-    .about-visual { height:280px; }
-    .hours-grid { grid-template-columns:1fr; }
-  }
-
-  /* ═══ WELCOME BANNER ═══ */
   .welcome-banner { position:fixed; top:80px; left:0; right:0; z-index:900; background:linear-gradient(135deg,var(--emerald),var(--emerald-mid)); border-bottom:1px solid rgba(200,169,81,0.25); padding:0.7rem 4rem; display:flex; align-items:center; justify-content:space-between; transform:translateY(-100%); transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1); }
   .welcome-banner.show { transform:translateY(0); }
   .welcome-msg { display:flex; align-items:center; gap:1rem; }
@@ -1369,8 +870,6 @@
   .welcome-text strong { color:var(--gold); font-style:normal; font-family:'Cinzel Decorative',serif; font-size:0.7rem; margin-right:0.3rem; }
   .welcome-close { background:none; border:none; color:rgba(245,237,216,0.5); cursor:none; font-size:1.1rem; transition:color 0.2s; flex-shrink:0; }
   .welcome-close:hover { color:var(--gold); }
-
-  /* ═══ AI AGENT CHAT UPGRADES ═══ */
   .chat-widget { position: fixed; bottom: 2rem; right: 2rem; z-index: 9500; }
   .chat-trigger {
     width: 70px; height: 70px;
@@ -1401,6 +900,62 @@
     max-height: 85vh;
   }
   .chat-panel.open { display: flex; }
+
+  /* ── MODAL SYSTEM BASE ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 9000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow-y: auto;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .modal-overlay.open {
+    display: flex;
+  }
+  .modal-box {
+    position: relative;
+    background: var(--charcoal, #1a1a18);
+    border: 1px solid rgba(200,169,81,0.25);
+    box-shadow: 0 40px 120px rgba(0,0,0,0.8), 0 0 60px rgba(200,169,81,0.06);
+    width: 100%;
+    max-width: 700px;
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 2px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid rgba(200,169,81,0.15);
+    background: rgba(0,0,0,0.25);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .modal-body {
+    padding: 1.4rem;
+    overflow-y: auto;
+    flex: 1;
+  }
+  /* Per-modal width overrides */
+  #adminModal    .modal-box { max-width: 960px; }
+  #consultModal  .modal-box { max-width: 800px; }
+  #paymentModal  .modal-box { max-width: 660px; }
+  #reviewModal   .modal-box { max-width: 580px; }
+  #leadModal     .modal-box { max-width: 580px; }
+  #adminLoginModal .modal-box { max-width: 480px; }
   .chat-header {
     background: linear-gradient(135deg, var(--emerald), var(--emerald-mid));
     padding: 0.9rem 1.2rem;
@@ -1551,9 +1106,19 @@
   }
   .chat-send:hover { background: var(--gold-light); }
   .chat-send:disabled { background: rgba(200,169,81,0.3); color: rgba(10,10,8,0.4); }
-  @media (max-width: 600px) { .chat-panel { width: 340px; } }
-
-  /* ═══ PAYMENT SYSTEM ═══ */
+  @media (max-width: 600px) {
+    /* Modal full-screen on mobile */
+    .modal-overlay { padding: 0; align-items: flex-end; }
+    .modal-box {
+      max-width: 100vw !important;
+      width: 100vw !important;
+      max-height: 96dvh !important;
+      border-radius: 8px 8px 0 0 !important;
+      margin: 0 !important;
+    }
+    .modal-body { padding: 1rem !important; }
+    #adminModal .modal-box { max-height: 100dvh !important; border-radius: 0 !important; }
+ .chat-panel { width: 340px; } }
   .pay-method-card {
     background: rgba(200,169,81,0.05); border: 1px solid rgba(200,169,81,0.15);
     padding: 0.7rem 0.4rem; text-align: center; cursor: none;
@@ -1573,8 +1138,6 @@
     font-family: Space Mono, monospace; font-size: 0.38rem; color: var(--text-muted);
     letter-spacing: 0.08em;
   }
-
-  /* ═══ ADMIN LOGIN GATE ═══ */
   .totp-box {
     width: 42px; height: 52px; text-align: center;
     background: rgba(255,255,255,0.05); border: 1px solid rgba(200,169,81,0.3);
@@ -1582,8 +1145,6 @@
     outline: none; transition: border-color 0.2s;
   }
   .totp-box:focus { border-color: var(--gold); }
-
-  /* ═══ MOBILE / TOUCH FIXES ═══ */
   @media (hover: none) and (pointer: coarse) {
     /* Touch devices — restore native cursor behavior */
     *, *::before, *::after { cursor: auto !important; }
@@ -1597,11 +1158,6 @@
     .atab { padding: 0.6rem 0.8rem !important; min-height: 36px; }
     .product-buy { min-height: 44px !important; padding: 0.8rem 1rem !important; }
     .btn-primary, .btn-secondary { min-height: 44px !important; }
-    /* Fix admin modal width on tablets */
-    #adminModal .modal-box { max-width: 98vw !important; }
-    /* Modal scroll on small screens */
-    .modal-box { max-height: 92vh; overflow-y: auto; }
-    .modal-body { max-height: 75vh; overflow-y: auto; }
     /* Fix chat panel on narrow phones */
     .chat-panel { width: 92vw !important; right: -10px !important; }
     /* Admin tabs wrap properly */
@@ -1613,7 +1169,6 @@
     .hero-stats { grid-template-columns: repeat(2, 1fr) !important; }
     .frow { flex-direction: column !important; }
     .fg { min-width: 100% !important; }
-    .modal-box { width: 98vw !important; margin: 1vw !important; padding: 0 !important; }
     .admin-tabs .atab { font-size: 0.38rem !important; padding: 0.5rem 0.5rem !important; }
     #payMethodGrid { grid-template-columns: repeat(2, 1fr) !important; }
     .totp-box { width: 36px !important; height: 44px !important; font-size: 1.1rem !important; }
@@ -1621,6 +1176,86 @@
 
   /* Force font-display swap to prevent FOIT */
   @font-face { font-display: swap; }
+  /* Payment method grid — 4 col desktop, 2 col tablet, 2 col mobile */
+  #payMethodGrid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .pay-method-card {
+    padding: 0.6rem 0.3rem !important;
+    min-height: 60px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.25rem !important;
+    cursor: pointer !important;
+  }
+  .pay-icon { font-size: 1.3rem !important; line-height: 1 !important; }
+  .pay-label { font-size: 0.42rem !important; line-height: 1.2 !important; }
+  /* Form rows inside checkout — always stack on narrow modal */
+  /* Card form — 2 cols for card/cvv row */
+  #pf-card .frow:last-of-type {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Shipping form — 2 col for city/state/zip row */
+  .ship-row-split {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr !important;
+    gap: 0.6rem !important;
+  }
+  /* Cart summary */
+  #cartSummary { margin-bottom: 0.8rem !important; }
+  /* Order total section */
+  #payOrderTotal { 
+    font-size: 0.78rem !important;
+    background: rgba(0,0,0,0.2) !important;
+    border: 1px solid rgba(200,169,81,0.15) !important;
+    padding: 0.8rem !important;
+    margin: 0.8rem 0 !important;
+  }
+  /* Action buttons */
+  #checkoutBtn {
+    flex: 1 !important;
+    min-height: 46px !important;
+    font-size: 0.6rem !important;
+  }
+  /* Pay forms */
+  .pay-form { display: none !important; }
+  .active-form { display: block !important; }
+  /* Stripe elements placeholder */
+  #stripe-payment-element {
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(200,169,81,0.25) !important;
+    border-radius: 4px !important;
+    padding: 0.8rem !important;
+    min-height: 44px !important;
+  }
+  /* Stripe badge */
+  .stripe-badge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 0.38rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 0.6rem !important;
+    justify-content: center !important;
+  }
+  /* Mobile breakpoints */
+  @media (max-width: 600px) {
+    #payMethodGrid { grid-template-columns: repeat(2, 1fr) !important; }
+    .ship-row-split { grid-template-columns: 1fr !important; }
+    #pf-card .frow:last-of-type { grid-template-columns: 1fr !important; }
+    #checkoutBtn { font-size: 0.55rem !important; }
+  }
+  @media (min-width: 601px) and (max-width: 900px) {
+    .modal-box { max-width: 92vw !important; }
+
+    #payMethodGrid { grid-template-columns: repeat(4, 1fr) !important; }
+  }
 </style>
 </head>
 
@@ -1639,6 +1274,10 @@
 
   ═══════════════════════════════════════════════════════════════
   -->
+  <!-- Stripe.js — loaded async, does not block render -->
+  <script src="https://js.stripe.com/v3/" async></script>
+  <!-- EmailJS — sends welcome emails to leads without a backend -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" async></script>
 </head>
 <body>
 
@@ -1657,8 +1296,6 @@
 <a href="#main-content" onclick="event.preventDefault();scrollTo('home')" style="position:absolute;top:-40px;left:0;background:var(--gold);color:var(--obsidian);padding:0.5rem 1rem;z-index:99999;font-size:0.85rem;font-weight:700;transition:top 0.15s;text-decoration:none;" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Skip to main content</a>
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-
-<!-- ═══ NAVBAR ═══ -->
 <nav role="navigation" aria-label="Main Navigation">
   <div class="nav-inner">
     <div class="nav-logo">
@@ -1677,8 +1314,6 @@
     <button class="nav-admin" id="navAdminBtn" onclick="openAdminGate()" style="opacity:0;pointer-events:none;" tabindex="-1" aria-hidden="true">⚙</button>
   </div>
 </nav>
-
-<!-- ═══ HERO ═══ -->
 <main id="main-content">
 <section class="hero" id="home" aria-label="Hero Banner">
   <div class="hero-bg"></div>
@@ -1738,8 +1373,6 @@
     <div class="scroll-arrow"></div>
   </div>
 </section>
-
-<!-- ═══ TICKER ═══ -->
 <div class="ticker">
   <div class="ticker-inner" id="ticker">
     <span class="ticker-item">Premium Herbal Teas</span>
@@ -1764,8 +1397,6 @@
     <span class="ticker-item">Serving You With Excellence</span>
   </div>
 </div>
-
-<!-- ═══ ABOUT US SECTION ═══ -->
 <section class="about-section" id="about">
   <div class="section-container">
     <div class="about-split reveal">
@@ -1809,8 +1440,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ PRODUCTS SECTION ═══ -->
 <section class="products-section" id="products">
   <div class="section-container">
     <div class="section-header reveal">
@@ -1833,8 +1462,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ SERVICES SECTION ═══ -->
 <section class="services-section" id="services">
   <div class="section-container">
     <div class="section-header reveal">
@@ -1847,8 +1474,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ MERCH SECTION ═══ -->
 <section class="merch-section" id="merch">
   <div class="section-container">
     <div class="merch-showcase reveal">
@@ -1879,8 +1504,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ CONSULTING SECTION ═══ -->
 <section class="consulting-section" id="consulting">
   <div class="section-container">
     <div class="consulting-split reveal">
@@ -1933,8 +1556,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ DELIVERY SECTION ═══ -->
 <section class="delivery-section" id="delivery">
   <div class="section-container">
     <div class="section-header reveal">
@@ -1973,9 +1594,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- ═══ HOURS / OPERATION TIME SECTION ═══ -->
 <section class="hours-section" id="hours">
   <div class="section-container">
     <div class="section-header reveal">
@@ -2019,8 +1637,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ TESTIMONIALS ═══ -->
 <section class="testimonials-section">
   <div class="section-container">
     <div class="section-header reveal">
@@ -2064,8 +1680,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ REVIEWS & FEEDBACK SECTION ═══ -->
 <section style="background:var(--charcoal);position:relative;overflow:hidden;" id="reviews">
   <div class="section-container">
     <div class="section-header reveal">
@@ -2105,8 +1719,6 @@
     </button>
   </div>
 </section>
-
-<!-- ═══ CTA SECTION ═══ -->
 <section class="cta-section">
   <div class="section-container">
     <div class="cta-content reveal">
@@ -2121,8 +1733,6 @@
     </div>
   </div>
 </section>
-
-<!-- ═══ FOOTER ═══ -->
 <footer role="contentinfo">
   <div class="footer-top">
     <div class="footer-brand">
@@ -2190,8 +1800,6 @@
     </div>
   </div>
 </footer>
-
-<!-- ═══ SOVEREIGN AI CUSTOMER SERVICE AGENT ═══ -->
 <div class="chat-widget" id="chatWidget">
 
   <div class="chat-trigger" id="chatTrigger" onclick="toggleChat()">
@@ -2254,14 +1862,9 @@
     </div>
   </div>
 </div>
-
-<!-- ═══════════════════════════════════════════
-  ALL MODALS & OVERLAYS
-═══════════════════════════════════════════ -->
-
 <!-- ADMIN MODAL -->
 <div class="modal-overlay" id="adminModal">
-  <div class="modal-box" style="max-width:900px;">
+  <div class="modal-box">
     <div class="modal-header">
       <span class="modal-header-icon">⚙️</span>
       <div class="modal-header-info">
@@ -2386,7 +1989,27 @@
 
       <!-- EMAIL CAMPAIGNS TAB -->
       <div class="atab-content" id="email-tab">
-        <h3 style="font-family:'Cinzel Decorative',serif;font-size:0.85rem;color:var(--gold);margin-bottom:1rem;">AI-Powered Email Campaigns</h3>
+        
+        <!-- Integration Status Panel -->
+        <div style="margin-bottom:1.5rem;padding:1rem;background:rgba(0,0,0,0.3);border:1px solid rgba(200,169,81,0.15);">
+          <div style="font-family:'Cinzel Decorative',serif;font-size:0.68rem;color:var(--gold);margin-bottom:0.8rem;">⚡ Live Integration Status</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;">
+            <div id="stripe-status-panel" style="padding:0.7rem;background:rgba(99,91,255,0.08);border:1px solid rgba(99,91,255,0.2);">
+              <div style="font-size:0.65rem;font-weight:bold;color:#635BFF;margin-bottom:0.3rem;">💳 Stripe Payments</div>
+              <div id="stripe-status-text" style="font-size:0.6rem;color:var(--text-muted);">Checking...</div>
+              <a href="https://stripe.com/dashboard" target="_blank" rel="noopener" style="font-size:0.45rem;color:#635BFF;text-decoration:none;display:block;margin-top:0.3rem;">→ Open Stripe Dashboard</a>
+            </div>
+            <div style="padding:0.7rem;background:rgba(255,165,0,0.06);border:1px solid rgba(255,165,0,0.2);">
+              <div style="font-size:0.65rem;font-weight:bold;color:#FFA500;margin-bottom:0.3rem;">✉ EmailJS</div>
+              <div id="emailjs-status-text" style="font-size:0.6rem;color:var(--text-muted);">Checking...</div>
+              <a href="https://www.emailjs.com/docs/" target="_blank" rel="noopener" style="font-size:0.45rem;color:#FFA500;text-decoration:none;display:block;margin-top:0.3rem;">→ EmailJS Setup Guide</a>
+            </div>
+          </div>
+          <div style="margin-top:0.8rem;font-family:'Space Mono',monospace;font-size:0.37rem;color:var(--text-muted);line-height:1.7;">
+            Configure keys directly in index.html → search <code style="color:var(--gold);">STRIPE_CONFIG</code> and <code style="color:var(--gold);">EMAILJS_CONFIG</code>
+          </div>
+        </div>
+<h3 style="font-family:'Cinzel Decorative',serif;font-size:0.85rem;color:var(--gold);margin-bottom:1rem;">AI-Powered Email Campaigns</h3>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
           <div style="background:rgba(200,169,81,0.05);border:1px solid rgba(200,169,81,0.15);padding:1.2rem;cursor:none;transition:all 0.3s;" onclick="loadEmailTemplate('welcome')" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(200,169,81,0.15)'">
             <div style="font-size:1.5rem;margin-bottom:0.5rem;">🎉</div>
@@ -2609,84 +2232,175 @@
 
 <!-- CONSULTING MODAL — AI Data Collection -->
 <div class="modal-overlay" id="consultModal">
-  <div class="modal-box" style="max-width:700px;">
+  <div class="modal-box" style="max-height:95vh;overflow-y:auto;">
     <div class="modal-header">
-      <span class="modal-header-icon">🧠</span>
+      <span class="modal-header-icon">◆</span>
       <div class="modal-header-info">
-        <span class="modal-title">Sage Consult — AI Consulting Intake</span>
-        <span class="modal-sub">◆ Secure Intake Form · Confidential · Expert Response Within 24hrs</span>
+        <span class="modal-title">Kosher Moor Consult</span>
+        <span class="modal-sub">◆ Sovereign Intelligence · Confidential · Expert Insights Delivered Instantly</span>
       </div>
-      <button class="modal-close" onclick="closeModal('consultModal')">✕</button>
+      <button class="modal-close" onclick="closeConsultModal()">✕</button>
     </div>
-    <div class="modal-body">
-      <div class="csteps">
-        <div class="cstep active" id="cstep1"><span class="cstep-n">01</span>You & Your Biz</div>
-        <div class="cstep" id="cstep2"><span class="cstep-n">02</span>Goals</div>
-        <div class="cstep" id="cstep3"><span class="cstep-n">03</span>Challenges</div>
-        <div class="cstep" id="cstep4"><span class="cstep-n">04</span>AI Analysis</div>
-        <div class="cstep" id="cstep5"><span class="cstep-n">05</span>Confirm</div>
+    <div class="modal-body" style="padding:1.4rem 1.6rem;">
+      <div class="csteps" id="kmcSteps">
+        <div class="cstep active" id="kmc-step1"><span class="cstep-n">01</span>Select Path</div>
+        <div class="cstep" id="kmc-step2"><span class="cstep-n">02</span>Your Profile</div>
+        <div class="cstep" id="kmc-step3"><span class="cstep-n">03</span>Deep Intake</div>
+        <div class="cstep" id="kmc-step4"><span class="cstep-n">04</span>Analysis</div>
+        <div class="cstep" id="kmc-step5"><span class="cstep-n">05</span>Confirm</div>
       </div>
 
-      <!-- Page 1 -->
-      <div class="cpage active" id="cp1">
-        <div class="ai-thinking">✦ Our consulting team is ready. Tell us about yourself and your business so we can prepare your sovereign strategy.</div>
-        <div class="frow"><div class="fg"><label>Full Name</label><input id="c_name" placeholder="Your sovereign name"></div><div class="fg"><label>Email</label><input id="c_email" type="email" placeholder="your@email.com"></div></div>
-        <div class="frow"><div class="fg"><label>Phone</label><input id="c_phone" placeholder="+1 469-928-9975"></div><div class="fg"><label>Business Name</label><input id="c_biz" placeholder="Your business or idea name"></div></div>
-        <div class="frow"><div class="fg"><label>Industry / Niche</label><input id="c_industry" placeholder="e.g. Wellness, Real Estate, E-commerce"></div><div class="fg"><label>Years in Business</label><select id="c_years"><option>Just starting</option><option>Less than 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select></div></div>
-        <div class="frow full"><div class="fg"><label>Current Monthly Revenue</label><select id="c_revenue"><option>$0 (pre-revenue)</option><option>$1 – $999</option><option>$1K – $5K</option><option>$5K – $20K</option><option>$20K – $100K</option><option>$100K+</option></select></div></div>
-        <button class="btn-primary" onclick="nextConsultStep(1)" style="margin-top:0.5rem;">Next: Define Your Goals →</button>
-      </div>
-
-      <!-- Page 2 -->
-      <div class="cpage" id="cp2">
-        <div class="ai-thinking">🤖 Excellent. Now tell Sage Consult what you want to achieve. Be specific — the more detail, the sharper the strategy.</div>
-        <div class="frow full"><div class="fg"><label>Primary Business Goal (Next 12 Months)</label><textarea id="c_goal" placeholder="e.g. Reach $50K/month in revenue, launch 3 new products, build a team of 10..."></textarea></div></div>
-        <div class="frow"><div class="fg"><label>Consulting Service Needed</label><select id="c_service"><option>Business Architecture</option><option>Brand Sovereignty</option><option>Revenue & Pricing Strategy</option><option>Market Entry & Expansion</option><option>Social Media & Marketing</option><option>Wealth Building & Assets</option><option>Full Sovereign Package</option></select></div><div class="fg"><label>Budget for Consulting</label><select id="c_budget"><option>$500 – $1,000</option><option>$1,000 – $5,000</option><option>$5,000 – $10,000</option><option>$10,000+</option><option>Custom / Let's Talk</option></select></div></div>
-        <div class="frow full"><div class="fg"><label>Ideal Timeline to See Results</label><select id="c_timeline"><option>30 days</option><option>60–90 days</option><option>6 months</option><option>12 months</option><option>Long-term partnership</option></select></div></div>
-        <div style="display:flex;gap:1rem;margin-top:0.5rem;"><button class="btn-secondary" onclick="nextConsultStep(-1)">← Back</button><button class="btn-primary" onclick="nextConsultStep(2)">Next: Challenges →</button></div>
-      </div>
-
-      <!-- Page 3 -->
-      <div class="cpage" id="cp3">
-        <div class="ai-thinking">🤖 Sage Consult is identifying your pain points. This is where the real transformation begins.</div>
-        <div class="frow full"><div class="fg"><label>Biggest Business Challenge Right Now</label><textarea id="c_challenge" placeholder="e.g. No consistent customers, don't know how to market, stuck at same revenue level..."></textarea></div></div>
-        <div class="frow full"><div class="fg"><label>Have you tried consulting before?</label><select id="c_prev"><option>No, this is my first time</option><option>Yes, but results were poor</option><option>Yes, with some success</option><option>Self-taught so far</option></select></div></div>
-        <div class="frow full"><div class="fg"><label>What makes you ready to invest NOW?</label><textarea id="c_ready" placeholder="Tell us what's driving your urgency to grow..."></textarea></div></div>
-        <div class="frow full"><div class="fg"><label>How did you hear about The Kosher Moor?</label><select id="c_source"><option>Social Media</option><option>Word of Mouth</option><option>Search Engine</option><option>Email</option><option>Podcast / YouTube</option><option>Other</option></select></div></div>
-        <div style="display:flex;gap:1rem;margin-top:0.5rem;"><button class="btn-secondary" onclick="nextConsultStep(-2)">← Back</button><button class="btn-primary" onclick="nextConsultStep(3)">Run AI Analysis →</button></div>
-      </div>
-
-      <!-- Page 4 — AI Analysis -->
-      <div class="cpage" id="cp4">
-        <div class="ai-thinking" id="aiThinking">🤖 Sage Consult is analyzing your data against 50 sovereign success patterns... Please wait...</div>
-        <div class="score-box" id="aiScoreBox" style="display:none;">
-          <h4>✦ Sovereign Business Assessment — Prepared by Our Expert Team</h4>
-          <div class="sbar"><div class="sbar-lbl"><span>Revenue Potential</span><span id="sc1v">0%</span></div><div class="sbar-track"><div class="sbar-fill" id="sc1"></div></div></div>
-          <div class="sbar"><div class="sbar-lbl"><span>Brand Strength</span><span id="sc2v">0%</span></div><div class="sbar-track"><div class="sbar-fill" id="sc2"></div></div></div>
-          <div class="sbar"><div class="sbar-lbl"><span>Market Readiness</span><span id="sc3v">0%</span></div><div class="sbar-track"><div class="sbar-fill" id="sc3"></div></div></div>
-          <div class="sbar"><div class="sbar-lbl"><span>Growth Velocity</span><span id="sc4v">0%</span></div><div class="sbar-track"><div class="sbar-fill" id="sc4"></div></div></div>
-          <div id="aiRec" style="margin-top:1rem;padding:0.8rem;background:rgba(29,74,46,0.25);border:1px solid rgba(61,139,90,0.2);font-size:0.82rem;color:var(--text-light);line-height:1.6;font-style:italic;"></div>
+      <!-- ── PAGE 1: Agent Selection ── -->
+      <div class="cpage active" id="kcp1">
+        <div style="text-align:center;margin-bottom:1.5rem;">
+          <div style="font-family:'Cinzel Decorative',serif;font-size:0.9rem;color:var(--gold);margin-bottom:0.4rem;">Select Your Sovereign Path</div>
+          <div style="font-size:0.85rem;color:var(--text-muted);">Choose the area where you need the most powerful guidance. Our consulting team specializes in three sovereign disciplines.</div>
         </div>
-        <div style="display:flex;gap:1rem;margin-top:1rem;" id="cp4btns" style="display:none;"><button class="btn-secondary" onclick="nextConsultStep(-3)">← Edit Answers</button><button class="btn-primary" onclick="nextConsultStep(4)">Confirm & Submit →</button></div>
-      </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem;" id="agentCards">
 
-      <!-- Page 5 — Confirm -->
-      <div class="cpage" id="cp5">
-        <div style="text-align:center;padding:2rem 1rem;">
-          <div style="font-size:4rem;margin-bottom:1rem;">👑</div>
-          <h3 style="font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:var(--gold);margin-bottom:0.8rem;">Sovereign. Your Data is Secured.</h3>
-          <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.7;max-width:500px;margin:0 auto 1.5rem;font-style:italic;">Our consulting team has received your profile. A senior consultant will reach out within 24 hours with your custom strategy plan. All information is kept strictly confidential.</p>
-          <div id="consultSummary" style="background:rgba(200,169,81,0.06);border:1px solid rgba(200,169,81,0.15);padding:1.2rem;text-align:left;margin-bottom:1.5rem;font-size:0.85rem;color:var(--text-light);line-height:1.8;"></div>
-          <button class="btn-primary" onclick="closeModal('consultModal')">◆ Close & Return to the Moor</button>
+          <div class="agent-select-card" id="ac-herbal" onclick="selectAgent('herbal',this)" style="border:1px solid rgba(200,169,81,0.2);padding:1.4rem;cursor:pointer;transition:all 0.3s;background:rgba(0,0,0,0.2);position:relative;overflow:hidden;">
+            <div style="font-size:2.2rem;margin-bottom:0.6rem;text-align:center;">🌿</div>
+            <div style="font-family:'Cinzel Decorative',serif;font-size:0.55rem;color:var(--gold);text-align:center;margin-bottom:0.5rem;letter-spacing:0.08em;">HERBAL MASTERY</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);text-align:center;line-height:1.5;">Personalized herbal protocols, wellness rituals, tincture guides rooted in ancestral pharmacopeia</div>
+            <div style="margin-top:0.8rem;text-align:center;font-family:'Space Mono',monospace;font-size:0.45rem;color:rgba(200,169,81,0.5);">HERBS · TEAS · TINCTURES · WELLNESS</div>
+          </div>
+
+          <div class="agent-select-card" id="ac-sovereignty" onclick="selectAgent('sovereignty',this)" style="border:1px solid rgba(200,169,81,0.2);padding:1.4rem;cursor:pointer;transition:all 0.3s;background:rgba(0,0,0,0.2);position:relative;overflow:hidden;">
+            <div style="font-size:2.2rem;margin-bottom:0.6rem;text-align:center;">👑</div>
+            <div style="font-family:'Cinzel Decorative',serif;font-size:0.55rem;color:var(--gold);text-align:center;margin-bottom:0.5rem;letter-spacing:0.08em;">SOVEREIGNTY STRATEGY</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);text-align:center;line-height:1.5;">Custom independence roadmap: income streams, barter systems, assets, and Dallas-specific opportunities</div>
+            <div style="margin-top:0.8rem;text-align:center;font-family:'Space Mono',monospace;font-size:0.45rem;color:rgba(200,169,81,0.5);">INCOME · ASSETS · FREEDOM · DALLAS</div>
+          </div>
+
+          <div class="agent-select-card" id="ac-business" onclick="selectAgent('business',this)" style="border:1px solid rgba(200,169,81,0.2);padding:1.4rem;cursor:pointer;transition:all 0.3s;background:rgba(0,0,0,0.2);position:relative;overflow:hidden;">
+            <div style="font-size:2.2rem;margin-bottom:0.6rem;text-align:center;">🏛️</div>
+            <div style="font-family:'Cinzel Decorative',serif;font-size:0.55rem;color:var(--gold);text-align:center;margin-bottom:0.5rem;letter-spacing:0.08em;">BUSINESS & BRAND</div>
+            <div style="font-size:0.78rem;color:var(--text-muted);text-align:center;line-height:1.5;">Heritage-brand positioning, $10K/month revenue model, and sovereign market domination strategy</div>
+            <div style="margin-top:0.8rem;text-align:center;font-family:'Space Mono',monospace;font-size:0.45rem;color:rgba(200,169,81,0.5);">BRAND · REVENUE · GROWTH · LEGACY</div>
+          </div>
+        </div>
+        <div id="agentSelectError" style="display:none;color:#e87070;font-size:0.78rem;text-align:center;margin-bottom:0.8rem;">Please select a consulting path to continue.</div>
+        <div style="display:flex;justify-content:center;">
+          <button class="btn-primary" onclick="kmcNext(1)" style="min-width:220px;">Continue to Profile →</button>
+        </div>
+        <div style="margin-top:1.2rem;padding:0.8rem;background:rgba(200,169,81,0.04);border:1px solid rgba(200,169,81,0.1);text-align:center;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.42rem;color:var(--text-muted);letter-spacing:0.1em;">SESSION INVESTMENT &nbsp;·&nbsp; <span style="color:var(--gold);">$150 / Session</span> &nbsp;·&nbsp; INCLUDES 30-DAY FOLLOW-UP &nbsp;·&nbsp; ALL SESSIONS CONFIDENTIAL</div>
         </div>
       </div>
+
+      <!-- ── PAGE 2: Core Profile ── -->
+      <div class="cpage" id="kcp2">
+        <div class="ai-thinking" style="margin-bottom:1rem;">✦ Your profile enables our consulting team to deliver hyper-specific, expert-level recommendations calibrated to your exact situation.</div>
+        <div class="frow"><div class="fg"><label>Full Name</label><input id="kmc_name" placeholder="Your sovereign name" autocomplete="name"></div><div class="fg"><label>Email</label><input id="kmc_email" type="email" placeholder="your@email.com" autocomplete="email"></div></div>
+        <div class="frow"><div class="fg"><label>Phone</label><input id="kmc_phone" placeholder="469-928-9975" autocomplete="tel"></div><div class="fg"><label>Location / City</label><input id="kmc_location" placeholder="e.g. Dallas, TX" value="Dallas, TX"></div></div>
+        <div class="frow"><div class="fg"><label>Age Range</label><select id="kmc_age"><option>18–24</option><option>25–34</option><option selected>35–44</option><option>45–54</option><option>55–64</option><option>65+</option></select></div><div class="fg"><label>Heritage / Background</label><input id="kmc_heritage" placeholder="e.g. Moorish, African, Indigenous, Caribbean..."></div></div>
+        <div class="frow full"><div class="fg"><label>What would a PERFECT outcome look like after this session?</label><textarea id="kmc_perfect" placeholder="Be specific — what changes, what you gain, what becomes possible..." style="min-height:70px;"></textarea></div></div>
+        <div style="display:flex;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
+          <button class="btn-secondary" onclick="kmcNext(-1)">← Back</button>
+          <button class="btn-primary" onclick="kmcNext(2)" style="flex:1;min-width:160px;">Next: Deep Intake →</button>
+        </div>
+      </div>
+
+      <!-- ── PAGE 3a: Herbal Mastery Intake ── -->
+      <div class="cpage" id="kcp3-herbal" style="display:none;">
+        <div class="ai-thinking" style="margin-bottom:1rem;">🌿 Our Herbal Mastery specialist will build your complete daily protocol — morning ritual, afternoon support, and evening restoration — calibrated to your unique constitution.</div>
+        <div class="frow"><div class="fg"><label>Primary Health Goal</label><select id="kmc_h_goal"><option>Mental Clarity & Focus</option><option>Energy & Vitality</option><option>Stress Relief & Calm</option><option>Immune Fortification</option><option>Hormonal Balance</option><option>Sleep Optimization</option><option>Gut Health & Digestion</option><option>Anti-Inflammatory Protocol</option><option>Weight & Metabolism</option><option>Longevity & Anti-Aging</option><option>Spiritual Clarity & Grounding</option></select></div><div class="fg"><label>Secondary Goal</label><select id="kmc_h_goal2"><option>None</option><option>Mental Clarity & Focus</option><option>Energy & Vitality</option><option>Stress Relief & Calm</option><option>Immune Fortification</option><option>Hormonal Balance</option><option>Sleep Optimization</option><option>Gut Health & Digestion</option><option>Anti-Inflammatory Protocol</option><option>Weight & Metabolism</option><option>Longevity & Anti-Aging</option></select></div></div>
+        <div class="frow"><div class="fg"><label>Current Health Challenges</label><textarea id="kmc_h_challenges" placeholder="e.g. brain fog, fatigue, chronic stress, poor sleep, inflammation..." style="min-height:65px;"></textarea></div></div>
+        <div class="frow"><div class="fg"><label>Current Supplements / Herbs (if any)</label><input id="kmc_h_current" placeholder="e.g. turmeric, ashwagandha, lion's mane..."></div><div class="fg"><label>Known Allergies / Sensitivities</label><input id="kmc_h_allergies" placeholder="e.g. nightshades, caffeine, gluten..."></div></div>
+        <div class="frow"><div class="fg"><label>Daily Routine Style</label><select id="kmc_h_routine"><option>Morning person — early riser</option><option>Night owl — late schedule</option><option>Shift worker / irregular hours</option><option>High stress / high output</option><option>Active / athletic</option><option>Sedentary / desk work</option></select></div><div class="fg"><label>Preferred Form</label><select id="kmc_h_form"><option>Teas & Brews</option><option>Tinctures & Drops</option><option>Capsules & Powders</option><option>All Forms</option><option>No Preference</option></select></div></div>
+        <div class="frow full"><div class="fg"><label>Anything else our Herbal Specialist should know?</label><textarea id="kmc_h_notes" placeholder="Medical conditions, medications, dietary restrictions, previous herb experiences..." style="min-height:55px;"></textarea></div></div>
+        <div style="display:flex;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
+          <button class="btn-secondary" onclick="kmcNext(-2)">← Back</button>
+          <button class="btn-primary" onclick="kmcNext(3)" style="flex:1;">Run Expert Analysis →</button>
+        </div>
+      </div>
+
+      <!-- ── PAGE 3b: Sovereignty Strategy Intake ── -->
+      <div class="cpage" id="kcp3-sovereignty" style="display:none;">
+        <div class="ai-thinking" style="margin-bottom:1rem;">👑 Our Sovereignty Strategist will map your complete independence architecture — income streams, asset building, and a Dallas-specific sovereignty roadmap built for your exact circumstances.</div>
+        <div class="frow"><div class="fg"><label>Current Primary Income Source</label><select id="kmc_s_income"><option>9-to-5 / W-2 Employment</option><option>Self-Employed / Freelance</option><option>Small Business Owner</option><option>Gig Economy / Contractor</option><option>Multiple Streams Already</option><option>Currently Building / Pre-revenue</option><option>Retired / Investment Income</option></select></div><div class="fg"><label>Monthly Net Income (approx.)</label><select id="kmc_s_netincome"><option>Under $1,000</option><option>$1,000–$2,500</option><option>$2,500–$5,000</option><option>$5,000–$10,000</option><option>$10,000–$25,000</option><option>$25,000+</option></select></div></div>
+        <div class="frow full"><div class="fg"><label>Current Assets (check all that apply)</label><div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.3rem;" id="kmc_s_assets">
+          <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;cursor:pointer;"><input type="checkbox" value="home" style="accent-color:var(--gold);"> Home / Property</label>
+          <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;cursor:pointer;"><input type="checkbox" value="vehicle" style="accent-color:var(--gold);"> Vehicle(s)</label>
+          <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;cursor:pointer;"><input type="checkbox" value="business" style="accent-color:var(--gold);"> Business Equipment</label>
+          <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;cursor:pointer;"><input type="checkbox" value="investments" style="accent-color:var(--gold);"> Investments / Stocks</label>
+          <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;cursor:pointer;"><input type="checkbox" value="skills" style="accent-color:var(--gold);"> Marketable Skills</label>
+          <label style="display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;cursor:pointer;"><input type="checkbox" value="land" style="accent-color:var(--gold);"> Land / Agriculture</label>
+        </div></div></div>
+        <div class="frow"><div class="fg"><label>Sovereignty Goal (12 Months)</label><select id="kmc_s_goal12"><option>Replace my 9-to-5 completely</option><option>Add $2,000+/month side income</option><option>Build a location-independent business</option><option>Create passive income streams</option><option>Launch a community-based business</option><option>Achieve complete financial independence</option><option>Build generational wealth</option></select></div><div class="fg"><label>Skills / Services You Could Offer</label><input id="kmc_s_skills" placeholder="e.g. lawn care, cooking, tutoring, consulting, trades..."></div></div>
+        <div class="frow full"><div class="fg"><label>Biggest barrier to financial sovereignty right now?</label><textarea id="kmc_s_barrier" placeholder="Be honest — capital, knowledge, time, fear, network..." style="min-height:65px;"></textarea></div></div>
+        <div class="frow"><div class="fg"><label>Investment Budget for Implementation</label><select id="kmc_s_budget"><option>$0 (sweat equity only)</option><option>Under $500</option><option>$500–$2,000</option><option>$2,000–$10,000</option><option>$10,000+</option></select></div><div class="fg"><label>Timeline Urgency</label><select id="kmc_s_urgency"><option>I need results in 30 days</option><option>60–90 day runway</option><option>6-month build</option><option>12-month strategic plan</option><option>Long-term legacy building</option></select></div></div>
+        <div style="display:flex;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
+          <button class="btn-secondary" onclick="kmcNext(-2)">← Back</button>
+          <button class="btn-primary" onclick="kmcNext(3)" style="flex:1;">Run Expert Analysis →</button>
+        </div>
+      </div>
+
+      <!-- ── PAGE 3c: Business & Brand Intake ── -->
+      <div class="cpage" id="kcp3-business" style="display:none;">
+        <div class="ai-thinking" style="margin-bottom:1rem;">🏛️ Our Business & Brand strategist will engineer your complete $10K/month revenue architecture — brand positioning, offer stack, pricing matrix, and market domination roadmap.</div>
+        <div class="frow"><div class="fg"><label>Business Type / Industry</label><input id="kmc_b_type" placeholder="e.g. herbal wellness, food, consulting, trades, e-commerce..."></div><div class="fg"><label>Business Stage</label><select id="kmc_b_stage"><option>Idea stage — not launched</option><option>Just launched (0–6 months)</option><option>Early traction (6–18 months)</option><option>Growing (1–3 years)</option><option>Established (3+ years)</option></select></div></div>
+        <div class="frow"><div class="fg"><label>Current Monthly Revenue</label><select id="kmc_b_revenue"><option>$0 (pre-revenue)</option><option>$1–$999</option><option>$1,000–$5,000</option><option>$5,000–$10,000</option><option>$10,000–$25,000</option><option>$25,000+</option></select></div><div class="fg"><label>Target Customer</label><input id="kmc_b_customer" placeholder="e.g. Black women 25–45 seeking wellness, fathers building legacy..."></div></div>
+        <div class="frow full"><div class="fg"><label>Current Products / Services / Offers</label><textarea id="kmc_b_offers" placeholder="List what you currently sell or plan to sell..." style="min-height:65px;"></textarea></div></div>
+        <div class="frow"><div class="fg"><label>Brand Heritage / Cultural Angle</label><input id="kmc_b_heritage" placeholder="e.g. Moorish, ancestral, indigenous, diaspora, faith-based..."></div><div class="fg"><label>Biggest Revenue Bottleneck</label><select id="kmc_b_bottleneck"><option>No consistent customers / traffic</option><option>Pricing too low / undercharging</option><option>No clear brand identity</option><option>Poor marketing / no visibility</option><option>No systems / operations chaos</option><option>Stuck at revenue plateau</option><option>Need to scale / hire / automate</option></select></div></div>
+        <div class="frow full"><div class="fg"><label>What does $10K/month look like for YOUR business? Describe the vision.</label><textarea id="kmc_b_vision" placeholder="What products sell, who buys them, where, and how the business operates at that level..." style="min-height:65px;"></textarea></div></div>
+        <div style="display:flex;gap:1rem;margin-top:0.5rem;flex-wrap:wrap;">
+          <button class="btn-secondary" onclick="kmcNext(-2)">← Back</button>
+          <button class="btn-primary" onclick="kmcNext(3)" style="flex:1;">Run Expert Analysis →</button>
+        </div>
+      </div>
+
+      <!-- ── PAGE 4: AI Analysis ── -->
+      <div class="cpage" id="kcp4">
+        <div id="kmc_loading" style="text-align:center;padding:2.5rem 1rem;">
+          <div style="font-size:2.5rem;margin-bottom:1rem;animation:spin 3s linear infinite;display:inline-block;">◆</div>
+          <div style="font-family:'Cinzel Decorative',serif;font-size:0.72rem;color:var(--gold);letter-spacing:0.12em;margin-bottom:0.5rem;">ANALYZING YOUR PROFILE</div>
+          <div id="kmc_loading_sub" style="font-size:0.78rem;color:var(--text-muted);font-style:italic;">Our consulting team is preparing your sovereign strategy...</div>
+          <div style="display:flex;justify-content:center;gap:0.3rem;margin-top:1.2rem;">
+            <div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>
+          </div>
+        </div>
+        <div id="kmc_results" style="display:none;">
+          <div id="kmc_results_inner"></div>
+          <div style="display:flex;gap:1rem;margin-top:1.4rem;flex-wrap:wrap;">
+            <button class="btn-secondary" onclick="kmcNext(-3)">← Refine Answers</button>
+            <button class="btn-primary" onclick="kmcNext(4)" id="kmc_confirm_btn" style="flex:1;">◆ Confirm & Book Session →</button>
+          </div>
+          <div style="margin-top:0.8rem;text-align:center;font-family:'Space Mono',monospace;font-size:0.4rem;color:var(--text-muted);">This analysis is prepared by The Kosher Moor consulting team. Full implementation requires a booked session.</div>
+        </div>
+        <div id="kmc_error" style="display:none;text-align:center;padding:1.5rem;">
+          <div style="font-size:2rem;margin-bottom:0.8rem;">⚠</div>
+          <div style="font-size:0.85rem;color:#e87070;margin-bottom:1rem;" id="kmc_error_msg">Analysis temporarily unavailable.</div>
+          <button class="btn-primary" onclick="kmcRetry()">Retry Analysis</button>
+          <button class="btn-secondary" onclick="kmcNext(4)" style="margin-left:0.5rem;">Continue Without Analysis</button>
+        </div>
+      </div>
+
+      <!-- ── PAGE 5: Confirmation ── -->
+      <div class="cpage" id="kcp5">
+        <div style="text-align:center;padding:1.5rem 1rem;">
+          <div style="font-size:3.5rem;margin-bottom:0.8rem;">👑</div>
+          <div style="font-family:'Cinzel Decorative',serif;font-size:1rem;color:var(--gold);margin-bottom:0.6rem;">Sovereign. Your Analysis is Secured.</div>
+          <div style="font-size:0.85rem;color:var(--text-muted);line-height:1.7;max-width:500px;margin:0 auto 1.2rem;font-style:italic;">Our consulting team has received your profile and analysis. A senior consultant will be in touch within 24 hours to schedule your full session.</div>
+          <div id="kmc_summary" style="background:rgba(200,169,81,0.06);border:1px solid rgba(200,169,81,0.15);padding:1.2rem;text-align:left;margin-bottom:1.2rem;font-size:0.8rem;color:var(--text-light);line-height:1.8;"></div>
+          <div style="margin-bottom:1.2rem;padding:0.8rem;background:rgba(29,74,46,0.2);border:1px solid rgba(61,139,90,0.25);">
+            <div style="font-family:'Space Mono',monospace;font-size:0.42rem;color:var(--gold);margin-bottom:0.3rem;">SESSION INVESTMENT</div>
+            <div style="font-size:1.1rem;color:var(--gold);font-family:'Cinzel Decorative',serif;">$150 / Session</div>
+            <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem;">Includes analysis report · 60-min deep session · 30-day email follow-up</div>
+          </div>
+          <button class="btn-primary" onclick="closeConsultModal()" style="margin-bottom:0.5rem;width:100%;">◆ Close & Return to the Moor</button>
+          <button class="btn-secondary" onclick="openModal('leadModal')" style="width:100%;">📞 Contact Our Team Now</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
 
+
 <!-- REVIEW MODAL -->
 <div class="modal-overlay" id="reviewModal">
-  <div class="modal-box" style="max-width:580px;">
+  <div class="modal-box">
     <div class="modal-header">
       <span class="modal-header-icon">⭐</span>
       <div class="modal-header-info">
@@ -2721,7 +2435,7 @@
 
 <!-- LEAD CAPTURE MODAL (Contact / Careers / Affiliates) -->
 <div class="modal-overlay" id="leadModal">
-  <div class="modal-box" style="max-width:580px;">
+  <div class="modal-box">
     <div class="modal-header">
       <span class="modal-header-icon">📋</span>
       <div class="modal-header-info">
@@ -2763,7 +2477,6 @@
 </div>
 
 <script>
-// ═══ CURSOR ═══
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -2791,7 +2504,6 @@ document.querySelectorAll('button, a, .product-card, .service-card, .agent-card'
   });
 });
 
-// ═══ SCROLL REVEAL ═══
 const observer = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
@@ -2801,7 +2513,6 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ═══ COUNT-UP ANIMATION ═══
 const counters = document.querySelectorAll('[data-count]');
 const countObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -2822,20 +2533,16 @@ const countObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 counters.forEach(c => countObserver.observe(c));
 
-// ═══ PRODUCT FILTER ═══
 // filterProducts() defined in dynamic storefront section above
 
-// ═══════════════════════════════════════════════════════
 // SOVEREIGN AI CUSTOMER SERVICE AGENT — Full Automation
 // Powered by Claude AI · Real Conversation · Full Context
-// ═══════════════════════════════════════════════════════
 let chatOpen = false;
 let chatMessageCount = 0;
 let leadCaptured = false;
 let agentBusy = false;
 let conversationHistory = [];
 
-// ── Kosher Moor system prompt — the agent's full brief ──
 const KM_SYSTEM_PROMPT = `You are the Sovereign Customer Service AI Agent for The Kosher Moor — a premium sovereign marketplace. Your name is "Sovereign." You are expert, warm, professional, and deeply knowledgeable.
 
 THE KOSHER MOOR — COMPLETE BUSINESS PROFILE:
@@ -2990,7 +2697,6 @@ function setBusy(busy) {
   if (btn) btn.innerHTML = busy ? '<span style="font-size:0.7rem;">...</span>' : '▶';
 }
 
-// ── Route action buttons based on agent response context ──
 function getContextActions(responseText) {
   const lower = responseText.toLowerCase();
   const actions = [];
@@ -3015,7 +2721,6 @@ function getContextActions(responseText) {
   return actions.slice(0, 3); // max 3 action buttons
 }
 
-// ── CORE: Send message to Claude API ──
 async function callSovereignAgent(userMessage) {
   setBusy(true);
   const typing = showTyping();
@@ -3122,7 +2827,6 @@ function captureLeadFromChat() {
   addBotMsg('✦ Welcome to The Moor family! You have been added to our exclusive list. Expect sovereign drops, early access, and wellness guides straight to your inbox. 👑<br><br>Now — how may I continue to serve you today?');
 }
 
-// ═══ SMOOTH NAV ═══
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const href = a.getAttribute('href');
@@ -3133,7 +2837,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ═══ NAVBAR SCROLL ═══
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
   if (window.scrollY > 80) {
@@ -3145,7 +2848,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// ═══ PRODUCT FILTER (fixed) ═══
 function filterCat(cat) {
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.cat-btn').forEach(b => {
@@ -3160,9 +2862,6 @@ function filterCat(cat) {
   document.getElementById('products').scrollIntoView({behavior:'smooth'});
 }
 // Keep old filterProducts working too
-function filterProducts(cat, el) { filterCat(cat); }
-
-// ═══ SOVEREIGN DATA STORE (secure vault sim) ═══
 const DB = {
   products: [
     {id:1,name:'Ancestral Rooibos Blend',cat:'tea',price:'18.99',badge:'Bestseller',emoji:'🍵',stock:142,sales:89},
@@ -3184,25 +2883,260 @@ const DB = {
   nextId: { products:9, leads:1, reviews:4 }
 };
 
-// ═══ MODAL SYSTEM ═══
+// ══════════════════════════════════════════════════════
+//  RAILWAY API BACKEND — Permanent Cloud Database
+//  All products, services, leads, reviews, orders
+//  persist across sessions via Railway + Supabase Postgres
+// ══════════════════════════════════════════════════════
+
+const API_BASE = 'https://kosher-moor-website-production.up.railway.app/api';
+
+// Low-level Railway API helper — replaces direct Supabase calls
+async function supaFetch(table, method='GET', body=null, query='') {
+  // Map Supabase-style query strings to REST route + method
+  let url = API_BASE + '/' + table;
+  let apiMethod = method;
+
+  // Parse id from query for PATCH/DELETE (e.g. 'id=eq.5')
+  const idMatch = query && query.match(/id=eq\.([^&]+)/);
+  const id = idMatch ? idMatch[1] : null;
+
+  // Map Supabase filter shortcuts to Express routes
+  if (query && query.includes('status=eq.Published')) {
+    // GET published reviews — /api/reviews (public endpoint returns published only)
+  } else if (id && (method === 'PATCH' || method === 'DELETE')) {
+    // Route PATCH/DELETE to /:id
+    if (table === 'reviews' && body && body.status === 'Published') {
+      url = API_BASE + '/reviews/' + id + '/approve';
+      apiMethod = 'PATCH';
+      body = null;
+    } else if (table === 'leads' && body && body.status) {
+      url = API_BASE + '/leads/' + id + '/status';
+      apiMethod = 'PATCH';
+    } else if (table === 'orders' && body && body.status) {
+      url = API_BASE + '/orders/' + id + '/status';
+      apiMethod = 'PATCH';
+    } else {
+      url = API_BASE + '/' + table + '/' + id;
+    }
+  }
+
+  const opts = {
+    method: apiMethod,
+    headers: { 'Content-Type': 'application/json' },
+  };
+  if (body) opts.body = JSON.stringify(body);
+
+  const res = await fetch(url, opts);
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error('API ' + apiMethod + ' ' + table + ': ' + err);
+  }
+  const text = await res.text();
+  if (!text) return null;
+  const json = JSON.parse(text);
+  // Normalize: Railway wraps single results, Supabase returns arrays
+  if (Array.isArray(json)) return json;
+  if (json.product)  return [json.product];
+  if (json.service)  return [json.service];
+  if (json.lead)     return [json.lead];
+  if (json.review)   return [json.review];
+  if (json.order)    return [json.order];
+  return json;
+}
+
+// ── PRODUCTS ──────────────────────────────────────────
+async function dbLoadProducts() {
+  try {
+    const rows = await supaFetch('products', 'GET', null, 'order=id.asc');
+    if (rows && rows.length) {
+      DB.products = rows.map(r => ({
+        id: r.id, name: r.name, cat: r.cat,
+        price: String(r.price), badge: r.badge || '',
+        desc: r.description || '', emoji: r.emoji || '📦',
+        stock: r.stock || 100, sales: r.sales || 0,
+        image_url: r.image_url || '',
+      }));
+      renderStorefront('all');
+      renderProductTable();
+    }
+  } catch(e) { console.error('Load products:', e); }
+}
+
+async function dbSaveProduct(p) {
+  try {
+    const payload = {
+      name: p.name, cat: p.cat, price: parseFloat(p.price),
+      badge: p.badge || '', description: p.desc || '',
+      emoji: p.emoji || '📦', stock: p.stock || 100, sales: p.sales || 0,
+    };
+    if (p._db_id) {
+      await supaFetch('products', 'PATCH', payload, 'id=eq.' + p._db_id);
+    } else {
+      const result = await supaFetch('products', 'POST', payload);
+      if (result && result[0]) p._db_id = result[0].id;
+    }
+  } catch(e) { console.error('Save product:', e); }
+}
+
+async function dbDeleteProduct(dbId) {
+  try {
+    await supaFetch('products', 'DELETE', null, 'id=eq.' + dbId);
+  } catch(e) { console.error('Delete product:', e); }
+}
+
+async function dbUpdateProductPrice(dbId, newPrice) {
+  try {
+    await supaFetch('products', 'PATCH', {price: parseFloat(newPrice)}, 'id=eq.' + dbId);
+  } catch(e) { console.error('Update price:', e); }
+}
+
+// ── SERVICES ─────────────────────────────────────────
+async function dbLoadServices() {
+  try {
+    const rows = await supaFetch('services', 'GET', null, 'order=id.asc');
+    if (rows && rows.length) {
+      DB.services = rows.map(r => ({
+        id: r.id, name: r.name, desc: r.description || '',
+        icon: r.icon || '🔧', price: r.price || 'Contact', cat: r.cat || 'service',
+      }));
+      renderServicesGrid();
+      renderServiceTable();
+    }
+  } catch(e) { console.error('Load services:', e); }
+}
+
+async function dbSaveService(svc) {
+  try {
+    const payload = {
+      name: svc.name, description: svc.desc || '',
+      icon: svc.icon || '🔧', price: svc.price || '', cat: svc.cat || 'service',
+    };
+    if (svc._db_id) {
+      await supaFetch('services', 'PATCH', payload, 'id=eq.' + svc._db_id);
+    } else {
+      const result = await supaFetch('services', 'POST', payload);
+      if (result && result[0]) svc._db_id = result[0].id;
+    }
+  } catch(e) { console.error('Save service:', e); }
+}
+
+async function dbDeleteService(dbId) {
+  try {
+    await supaFetch('services', 'DELETE', null, 'id=eq.' + dbId);
+  } catch(e) { console.error('Delete service:', e); }
+}
+
+// ── LEADS ─────────────────────────────────────────────
+async function dbSaveLead(lead) {
+  try {
+    await supaFetch('leads', 'POST', {
+      name: lead.name || '', email: lead.email || '',
+      phone: lead.phone || '', interest: lead.interest || 'General',
+      source: lead.source || 'Website', status: 'New', msg: lead.msg || '',
+    });
+  } catch(e) { console.error('Save lead:', e); }
+}
+
+async function dbLoadLeads() {
+  try {
+    const rows = await supaFetch('leads', 'GET', null, 'order=created_at.desc&limit=200');
+    if (rows) {
+      DB.leads = rows.map(r => ({
+        id: r.id, name: r.name, email: r.email, phone: r.phone || '',
+        interest: r.interest, source: r.source, status: r.status,
+        date: new Date(r.created_at).toLocaleDateString(),
+      }));
+      renderLeadsTable();
+    }
+  } catch(e) { console.error('Load leads:', e); }
+}
+
+// ── REVIEWS ───────────────────────────────────────────
+async function dbSaveReview(review) {
+  try {
+    const result = await supaFetch('reviews', 'POST', {
+      name: review.name, email: review.email || '',
+      product: review.product || '', stars: review.stars || 5,
+      review_text: review.text, recommendation: review.rec || '',
+      status: 'Pending',
+    });
+    if (result && result[0]) review._db_id = result[0].id;
+  } catch(e) { console.error('Save review:', e); }
+}
+
+async function dbLoadReviews() {
+  try {
+    const rows = await supaFetch('reviews', 'GET', null, 'status=eq.Published&order=created_at.desc');
+    if (rows) {
+      DB.reviews = rows.map(r => ({
+        id: r.id, _db_id: r.id, name: r.name, email: r.email,
+        product: r.product, stars: r.stars, text: r.review_text,
+        rec: r.recommendation, status: r.status,
+        date: new Date(r.created_at).toLocaleDateString(),
+      }));
+      renderReviewsGrid();
+    }
+  } catch(e) { console.error('Load reviews:', e); }
+}
+
+async function dbApproveReview(dbId) {
+  try {
+    await supaFetch('reviews', 'PATCH', {status: 'Published'}, 'id=eq.' + dbId);
+  } catch(e) { console.error('Approve review:', e); }
+}
+
+async function dbDeleteReview(dbId) {
+  try {
+    await supaFetch('reviews', 'DELETE', null, 'id=eq.' + dbId);
+  } catch(e) { console.error('Delete review:', e); }
+}
+
+// ── ORDERS ────────────────────────────────────────────
+async function dbSaveOrder(orderRef, name, email, items, total, method) {
+  try {
+    await supaFetch('orders', 'POST', {
+      order_ref: orderRef, customer_name: name, customer_email: email,
+      items: items, total: parseFloat(total), payment_method: method, status: 'Confirmed',
+    });
+  } catch(e) { console.error('Save order:', e); }
+}
+
+// ── INIT: Load everything from Supabase on page load ──
+async function supabaseInit() {
+  const indicator = document.getElementById('supa-status');
+  try {
+    await Promise.all([dbLoadProducts(), dbLoadServices(), dbLoadReviews()]);
+    if (indicator) {
+      indicator.textContent = '● Live';
+      indicator.style.color = '#4CAF50';
+    }
+  } catch(e) {
+    console.error('Supabase init error:', e);
+    if (indicator) {
+      indicator.textContent = '● Offline';
+      indicator.style.color = '#e87070';
+    }
+  }
+}
+
+
 function openModal(id){ document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
-function closeModal(id){ document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; if(id==='paymentModal'){ currentCart=[]; checkoutSubmitting=false; } }
+function closeModal(id){ const el=document.getElementById(id); if(el) el.classList.remove('open'); document.body.style.overflow=''; if(id==='paymentModal'){ currentCart=[]; checkoutSubmitting=false; } }
 document.querySelectorAll('.modal-overlay').forEach(m => {
   m.addEventListener('click', e => { if(e.target === m) closeModal(m.id); });
 });
 
-// ═══ ADMIN — TAB SWITCHING ═══
 function switchTab(tabId, groupClass, el){
   document.querySelectorAll('.'+groupClass).forEach(b => b.classList.remove('active'));
   el.classList.add('active');
   document.querySelectorAll('.atab-content').forEach(c => c.classList.remove('active'));
   document.getElementById(tabId).classList.add('active');
-  if(tabId === 'leads-tab') renderLeadsTable();
+  if(tabId === 'leads-tab') { dbLoadLeads().then(renderLeadsTable); }
   if(tabId === 'reviews-tab') renderReviewsAdmin();
   if(tabId === 'image-tab') { /* image tab loaded */ }
 }
 
-// ═══ PRODUCT MANAGEMENT ═══
 function renderProductTable(){
   const tb = document.getElementById('productTableBody');
   if(!tb) return;
@@ -3236,6 +3170,9 @@ function editProduct(id){
   document.getElementById('pPrice').value = p.price;
   document.getElementById('pBadge').value = p.badge||'';
   document.getElementById('pDesc').value = p.desc||'';
+  // Store editing id for save
+  document.getElementById('pName').dataset.editId = id;
+  document.getElementById('pName').dataset.editDbId = p._db_id || p.id;
   switchTab('products-tab','atab', document.querySelector('.atab'));
   document.querySelector('.atab').classList.add('active');
 }
@@ -3243,8 +3180,14 @@ function editProduct(id){
 function deleteProduct(id){
   if(!confirm('Remove this product from the vault?')) return;
   const idx = DB.products.findIndex(x=>x.id===id);
-  if(idx>-1) DB.products.splice(idx,1);
+  if(idx>-1){
+    const p = DB.products[idx];
+    if(p._db_id) dbDeleteProduct(p._db_id);
+    else dbDeleteProduct(p.id); // fallback for seeded products
+    DB.products.splice(idx,1);
+  }
   renderProductTable();
+  renderStorefront('all');
 }
 
 function previewImg(input){
@@ -3266,11 +3209,6 @@ if(ud){
   ud.addEventListener('drop', e => { e.preventDefault(); ud.classList.remove('over'); const f = e.dataTransfer.files[0]; if(f){ const fi = document.getElementById('pImage'); const dt = new DataTransfer(); dt.items.add(f); fi.files = dt.files; previewImg(fi); } });
 }
 
-// ═══ LEAD MANAGEMENT ═══
-function saveLead(data){
-  DB.leads.unshift({...data, id:DB.nextId.leads++, date: new Date().toLocaleDateString(), status:'New'});
-  updateCRMStats();
-}
 
 function submitLead(){
   const name = document.getElementById('l_name').value.trim();
@@ -3344,7 +3282,6 @@ function sendCampaign(){
   document.querySelectorAll('.atab')[2].classList.add('active');
 }
 
-// ═══ EMAIL TEMPLATES ═══
 const emailTemplates = {
   welcome: {
     subject: 'Email Sequence 1 — Onboarding',
@@ -3398,7 +3335,7 @@ Our expert consulting team delivers full business blueprints — not generic adv
 <strong>Consulting spots for Q1 are limited.</strong><br><br>
 → Book your sovereign strategy session today:<br>
 <strong style="color:var(--gold);">thekoshermoor.com/consulting</strong><br><br>
-<em>Sage Consult Agent — The Kosher Moor</em>`
+<em>Kosher Moor Consult Agent — The Kosher Moor</em>`
   }
 };
 
@@ -3408,13 +3345,7 @@ function loadEmailTemplate(type){
   document.getElementById('emailPreviewBox').style.display='block';
 }
 
-function sendEmailCampaign(){
-  const es = document.getElementById('emailSuccess'); if(es) es.style.display='block';
-  const esent = document.getElementById('emailsSent'); if(esent) esent.textContent = (DB.leads.length * 4);
-  setTimeout(()=>{ const e=document.getElementById('emailSuccess'); if(e) e.style.display='none'; },5000);
-}
 
-// ═══ REVIEWS ═══
 let selectedStars = 5;
 function setStars(n){
   selectedStars = n;
@@ -3434,6 +3365,7 @@ function submitReview(){
   if(!name||!text){ alert('Please fill in your name and review.'); return; }
   const review = { id:DB.nextId.reviews++, name, email, product, stars:selectedStars, text, rec, status:'Pending', date:new Date().toLocaleDateString() };
   DB.reviews.unshift(review);
+  dbSaveReview(review); // Save to Supabase
   // Show on site after brief "AI moderation" delay
   setTimeout(()=>{ review.status='Published'; renderReviewsGrid(); const rc=document.getElementById('reviewCount'); if(rc) rc.textContent = DB.reviews.filter(r=>r.status==='Published').length; }, 2000);
   saveLead({name, email, phone:'', interest:'Product Review: '+product, source:'Review Form'});
@@ -3484,71 +3416,572 @@ function renderReviewsAdmin(){
     </tr>`).join('');
 }
 
-function approveReview(id){ const r=DB.reviews.find(x=>x.id===id); if(r){ r.status='Published'; renderReviewsAdmin(); renderReviewsGrid(); } }
-function deleteReview(id){ const i=DB.reviews.findIndex(x=>x.id===id); if(i>-1){ DB.reviews.splice(i,1); renderReviewsAdmin(); renderReviewsGrid(); } }
+function approveReview(id){ const r=DB.reviews.find(x=>x.id===id); if(r){ r.status='Published'; if(r._db_id) dbApproveReview(r._db_id); renderReviewsAdmin(); renderReviewsGrid(); } }
+function deleteReview(id){ const i=DB.reviews.findIndex(x=>x.id===id); if(i>-1){ const r=DB.reviews[i]; if(r._db_id) dbDeleteReview(r._db_id); DB.reviews.splice(i,1); renderReviewsAdmin(); renderReviewsGrid(); } }
 
-// ═══ CONSULTING AI ═══
-let consultStep = 1;
-function nextConsultStep(dir){
-  const fromStep = consultStep;
-  if(dir > 0 && consultStep < 5) consultStep++;
-  else if(dir < 0 && consultStep > 1) consultStep = Math.max(1, consultStep + dir);
-  
-  // Validate required fields
-  if(fromStep===1 && dir>0){
-    const name=document.getElementById('c_name').value.trim();
-    const email=document.getElementById('c_email').value.trim();
-    if(!name||!email){ alert('Please enter your name and email.'); consultStep=fromStep; return; }
-  }
 
-  document.querySelectorAll('.cpage').forEach(p=>p.classList.remove('active'));
-  document.getElementById('cp'+consultStep).classList.add('active');
-  document.querySelectorAll('.cstep').forEach((s,i)=>{ s.classList.remove('active','done'); if(i+1<consultStep) s.classList.add('done'); else if(i+1===consultStep) s.classList.add('active'); });
+//  KOSHER MOOR CONSULT — 3-Agent AI Consulting System
+//  Powered by Claude Sonnet · Confidential · $150/session
 
-  if(consultStep===4){
-    runAIAnalysis();
-  }
-  if(consultStep===5){
-    finalizeConsult();
-  }
+let kmcCurrentAgent = null;  // 'herbal' | 'sovereignty' | 'business'
+let kmcCurrentPage  = 1;
+let kmcAnalysisResult = null;
+let kmcSessionMemory  = [];  // Stores conversation for continuity
+
+const KMC_RATE = { count: 0, resetAt: 0, maxPerHour: 3 };
+
+function kmcCheckRateLimit() {
+  const now = Date.now();
+  if (now > KMC_RATE.resetAt) { KMC_RATE.count = 0; KMC_RATE.resetAt = now + 3600000; }
+  if (KMC_RATE.count >= KMC_RATE.maxPerHour) return false;
+  KMC_RATE.count++;
+  return true;
 }
 
-function runAIAnalysis(){
-  document.getElementById('aiScoreBox').style.display='none';
-  document.getElementById('aiThinking').style.display='flex';
-  document.getElementById('cp4btns').style.display='none';
-  
-  setTimeout(()=>{
-    document.getElementById('aiThinking').style.display='none';
-    document.getElementById('aiScoreBox').style.display='block';
-    document.getElementById('cp4btns').style.display='flex';
-    const scores = [82,71,88,76];
-    const ids = ['sc1','sc2','sc3','sc4'];
-    ids.forEach((id,i)=>{
-      const v = scores[i];
-      document.getElementById(id+'v').textContent = v+'%';
-      setTimeout(()=>{ document.getElementById(id).style.width=v+'%'; },200);
+
+const KMC_AGENT_PROMPTS = {
+
+  herbal: function(data) {
+    return `You are the world's foremost herbalist and sovereign wellness consultant — a $1M/year expert whose protocols combine West African pharmacopeia, Moorish botanical science, Ayurvedic wisdom, and modern phytochemistry research. Your clients pay $500/hour for what you're about to deliver.
+
+Analyze this client intake deeply:
+
+CLIENT DATA:
+${JSON.stringify(data, null, 2)}
+
+Your response MUST include ALL of these sections, formatted in rich HTML:
+
+<div class="kmc-report">
+
+<div class="kmc-section">
+<h2>◆ Expert Diagnosis of Your Herbal Constitution</h2>
+[Analyze their health goals, challenges, age range, heritage, and current routine. Identify their dominant imbalances (e.g., vata/pitta/kapha or TCM patterns), their ancestral herbal heritage, and what their symptom cluster reveals about their specific needs. Be specific and authoritative — not generic.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Your Sovereign Daily Protocol</h2>
+[Build a complete morning → afternoon → evening herbal protocol with specific herbs, forms, doses, timing, and preparation methods. Include at minimum 5–7 specific herbs with their scientific names. Tie herbs to their ancestral/cultural origins where relevant.]
+<h3>Morning Ritual (6AM–9AM)</h3>
+[Specific brew, tincture, or supplement — with dosage, preparation, and WHY this herb at this time]
+<h3>Midday Support (12PM–2PM)</h3>
+[Energy, focus, or digestive support specific to their goals]
+<h3>Evening Restoration (7PM–9PM)</h3>
+[Wind-down, inflammation reduction, sleep preparation]
+</div>
+
+<div class="kmc-section">
+<h2>◆ 3 High-Impact Recommendations</h2>
+[Give 3 SPECIFIC, actionable herb-based interventions with expected results, timelines, and exactly how to implement each one. Reference traditional use AND modern research.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Expected ROI Timeline</h2>
+[Week 1–2: immediate effects to notice | Month 1: measurable changes | Month 3: full protocol results | Month 6: transformation benchmarks. Use specific metrics.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Sovereign Sourcing Guide</h2>
+[For the top 5 herbs in their protocol: quality indicators to look for, forms to buy, red flags to avoid, and which Kosher Moor products cover their needs. Connect their protocol to specific KM product categories.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Next Steps & Session Investment</h2>
+[What a full $150 Herbal Mastery Session includes: personalized testing protocol, 90-day herb calendar, custom blend formulation consultation, monthly check-ins. Create urgency without pressure.]
+</div>
+
+</div>
+
+CRITICAL FORMATTING RULES:
+- Output ONLY the HTML div content — no markdown, no backticks
+- Use inline styles compatible with a dark theme: gold #C8A951, text #F5EDD8, muted #888
+- Herb names in bold with scientific name in italics
+- Section headers in gold, authoritative tone throughout
+- Mobile-responsive, no fixed widths
+- Tone: Authoritative, warm, heritage-rooted, sovereignty-focused
+- Never mention Claude or AI — you are "The Kosher Moor Consulting Team"`;
+  },
+
+  sovereignty: function(data) {
+    return `You are the world's foremost sovereignty strategist and financial independence architect — a $1M/year consultant who has helped hundreds of Black, Indigenous, and people of color families build complete financial independence. You specialize in the Dallas-Fort Worth market. Your clients pay $500/hour for exactly what you're about to deliver.
+
+Analyze this client intake with ruthless precision:
+
+CLIENT DATA:
+${JSON.stringify(data, null, 2)}
+
+Your response MUST include ALL of these sections, formatted in rich HTML:
+
+<div class="kmc-report">
+
+<div class="kmc-section">
+<h2>◆ Expert Diagnosis of Your Current Sovereignty Score</h2>
+[Analyze their income situation, assets, barriers, and goals. Score their current sovereignty on 4 dimensions: Income Diversity (X/10), Asset Base (X/10), Skill Monetization (X/10), Market Positioning (X/10). Be direct about what's holding them back — not generic, not gentle. This is an expert medical diagnosis of their financial health.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Your Dallas Sovereignty Roadmap</h2>
+[Build a SPECIFIC roadmap for their exact location and situation. Include Dallas-specific opportunities: local markets, communities, industries, tax advantages, real estate dynamics, cultural economy. Give a phased 90-day → 6-month → 12-month plan with specific milestones.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Income Stream Architecture</h2>
+[Design their specific multi-stream income stack based on their skills and assets. For each stream: Name | How to Launch | Time to First Dollar | Monthly Revenue Potential | Investment Required. Include at minimum 3 income streams they could launch NOW and 2 long-term asset-building moves.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Sovereign Pricing Matrix</h2>
+[Based on their skills, build a specific pricing matrix: service/product name | entry price | mid-tier | premium | why each price point is justified by market data. Include barter equivalents where relevant.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ 3 High-Impact Actions (Start This Week)</h2>
+[Give 3 actions they can take in the next 7 days that will generate their first results. Be specific: exact actions, exact platforms, exact scripts, exact numbers.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Expected ROI Timeline</h2>
+[30 days: what they should see | 90 days: measurable benchmarks | 6 months: income milestone | 12 months: sovereignty achieved marker. Use specific dollar figures based on their current situation.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Next Steps & Session Investment</h2>
+[What a full $150 Sovereignty Strategy Session includes: complete independence audit, customized 90-day action plan, Dallas market connection map, accountability framework. Make the ROI obvious.]
+</div>
+
+</div>
+
+CRITICAL FORMATTING RULES:
+- Output ONLY the HTML div content — no markdown, no backticks
+- Dark theme inline styles: gold #C8A951, cream #F5EDD8, muted #888, emerald #3D8B5A
+- Numbers and dollar amounts in gold, bold
+- Section headers authoritative, in gold
+- Mobile-responsive — no fixed widths
+- Tone: Commanding, direct, data-grounded, sovereignty-focused
+- Never mention Claude or AI — you are "The Kosher Moor Consulting Team"`;
+  },
+
+  business: function(data) {
+    return `You are the world's foremost heritage-brand strategist and revenue architect — a $1M/year consultant who has built dozens of culturally-rooted businesses to six and seven figures. You specialize in creating authentic, legacy-driven brands that generate $10K/month and beyond. Your clients pay $500/hour for exactly what you're about to deliver.
+
+Analyze this business intake with expert precision:
+
+CLIENT DATA:
+${JSON.stringify(data, null, 2)}
+
+Your response MUST include ALL of these sections, formatted in rich HTML:
+
+<div class="kmc-report">
+
+<div class="kmc-section">
+<h2>◆ Expert Brand Diagnosis</h2>
+[Analyze their business type, stage, revenue, target customer, and heritage angle. Identify their biggest untapped opportunity, their current positioning gaps, and why they're stuck at their current revenue level. Be brutally honest and specific — no generic business advice.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Heritage Brand Positioning Framework</h2>
+[Design their unique brand position using their cultural heritage as a competitive moat. Include: Brand Archetype, Core Brand Story (2 sentences), Brand Voice (3 adjectives with examples), Target Audience Avatar (be specific: demographics, psychographics, what they search, where they live), Unique Value Proposition, and 3 key brand differentiators that competitors cannot copy because they are tied to heritage/authenticity.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ $10K/Month Revenue Architecture</h2>
+[Build their SPECIFIC path to $10K/month. Break it down mathematically:
+- Core Offer: Price × Volume = Revenue
+- Mid-Tier Offer: Price × Volume = Revenue
+- Premium/Signature Offer: Price × Volume = Revenue
+- Total stack = $10K/month
+Include the exact offer names, price points, and delivery model for each tier. Make this feel achievable and specific to their business.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ 3 High-Impact Recommendations</h2>
+[Give 3 SPECIFIC moves that will generate the most revenue in the shortest time for this exact business. Each must include: the action, the revenue impact, the timeline, and exactly how to execute it.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ 90-Day Market Domination Plan</h2>
+[A specific phase-by-phase plan: Phase 1 (Days 1–30): Foundation | Phase 2 (Days 31–60): Growth | Phase 3 (Days 61–90): Scale. Each phase has 3 specific tasks, a revenue target, and a key metric to track.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Expected ROI Timeline</h2>
+[Month 1: realistic revenue target | Month 3: growth benchmark | Month 6: scale milestone | Month 12: sovereignty achieved. Use specific numbers based on their current stage and revenue.]
+</div>
+
+<div class="kmc-section">
+<h2>◆ Next Steps & Session Investment</h2>
+[What a full $150 Business Brand Session includes: complete brand audit, custom $10K revenue model, marketing funnel design, 90-day accountability plan. Price anchoring: at their first additional $10K/month, session ROI is 6,567%. Make this feel inevitable.]
+</div>
+
+</div>
+
+CRITICAL FORMATTING RULES:
+- Output ONLY the HTML div content — no markdown, no backticks
+- Dark theme inline styles: gold #C8A951, cream #F5EDD8, emerald #3D8B5A
+- Revenue numbers in gold and bold — make the math visible
+- Section headers authoritative, in gold
+- Mobile-responsive — no fixed widths
+- Tone: CEO-level authority, heritage-rooted, direct, ambitious
+- Never mention Claude or AI — you are "The Kosher Moor Consulting Team"`;
+  }
+};
+
+function selectAgent(type, el) {
+  kmcCurrentAgent = type;
+  document.querySelectorAll('.agent-select-card').forEach(c => {
+    c.style.border = '1px solid rgba(200,169,81,0.2)';
+    c.style.background = 'rgba(0,0,0,0.2)';
+    c.style.transform = 'none';
+    c.style.boxShadow = 'none';
+  });
+  if (el) {
+    el.style.border = '2px solid var(--gold)';
+    el.style.background = 'rgba(200,169,81,0.06)';
+    el.style.transform = 'translateY(-3px)';
+    el.style.boxShadow = '0 8px 30px rgba(200,169,81,0.12)';
+  }
+  document.getElementById('agentSelectError').style.display = 'none';
+}
+
+function kmcNext(dir) {
+  if (dir === 1) {
+    // Page 1 → 2: validate agent selected
+    if (kmcCurrentPage === 1) {
+      if (!kmcCurrentAgent) {
+        document.getElementById('agentSelectError').style.display = 'block';
+        return;
+      }
+      kmcSetPage(2);
+      return;
+    }
+    // Page 2 → 3: validate core profile
+    if (kmcCurrentPage === 2) {
+      const name  = document.getElementById('kmc_name').value.trim();
+      const email = document.getElementById('kmc_email').value.trim();
+      if (!name || !email) { alert('Please enter your name and email to continue.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+      kmcSetPage(3);
+      return;
+    }
+  }
+
+  if (dir === 2) {
+    // Page 2 → 3
+    kmcSetPage(3);
+    return;
+  }
+
+  if (dir === 3) {
+    // Page 3 → 4: run analysis
+    kmcSetPage(4);
+    kmcRunAnalysis();
+    return;
+  }
+
+  if (dir === 4) {
+    // Page 4 → 5: confirm
+    kmcSetPage(5);
+    kmcFinalizeConsult();
+    return;
+  }
+
+  // Back navigation
+  if (dir === -1 && kmcCurrentPage === 2) { kmcSetPage(1); return; }
+  if (dir === -2 && kmcCurrentPage === 3) { kmcSetPage(2); return; }
+  if (dir === -3 && kmcCurrentPage === 4) { kmcSetPage(3); return; }
+}
+
+function kmcSetPage(page) {
+  kmcCurrentPage = page;
+
+  // Hide all pages
+  ['kcp1','kcp2','kcp3-herbal','kcp3-sovereignty','kcp3-business','kcp4','kcp5'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+
+  // Show correct page
+  if (page === 1) {
+    document.getElementById('kcp1').style.display = 'block';
+  } else if (page === 2) {
+    document.getElementById('kcp2').style.display = 'block';
+  } else if (page === 3) {
+    const pageId = 'kcp3-' + (kmcCurrentAgent || 'herbal');
+    document.getElementById(pageId).style.display = 'block';
+  } else if (page === 4) {
+    document.getElementById('kcp4').style.display = 'block';
+    document.getElementById('kmc_loading').style.display = 'block';
+    document.getElementById('kmc_results').style.display = 'none';
+    document.getElementById('kmc_error').style.display = 'none';
+  } else if (page === 5) {
+    document.getElementById('kcp5').style.display = 'block';
+  }
+
+  // Update step indicators
+  ['kmc-step1','kmc-step2','kmc-step3','kmc-step4','kmc-step5'].forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('active', 'done');
+    if (i + 1 < page) el.classList.add('done');
+    else if (i + 1 === page) el.classList.add('active');
+  });
+}
+
+function kmcGatherData() {
+  const base = {
+    name:     document.getElementById('kmc_name').value.trim(),
+    email:    document.getElementById('kmc_email').value.trim(),
+    phone:    document.getElementById('kmc_phone').value.trim(),
+    location: document.getElementById('kmc_location').value.trim(),
+    age:      document.getElementById('kmc_age').value,
+    heritage: document.getElementById('kmc_heritage').value.trim(),
+    perfect_outcome: document.getElementById('kmc_perfect').value.trim(),
+    agent_type: kmcCurrentAgent,
+    session_date: new Date().toLocaleDateString(),
+  };
+
+  if (kmcCurrentAgent === 'herbal') {
+    return { ...base,
+      primary_goal:    document.getElementById('kmc_h_goal').value,
+      secondary_goal:  document.getElementById('kmc_h_goal2').value,
+      health_challenges: document.getElementById('kmc_h_challenges').value.trim(),
+      current_herbs:   document.getElementById('kmc_h_current').value.trim(),
+      allergies:       document.getElementById('kmc_h_allergies').value.trim(),
+      daily_routine:   document.getElementById('kmc_h_routine').value,
+      preferred_form:  document.getElementById('kmc_h_form').value,
+      notes:           document.getElementById('kmc_h_notes').value.trim(),
+    };
+  }
+
+  if (kmcCurrentAgent === 'sovereignty') {
+    const assetEls = document.querySelectorAll('#kmc_s_assets input:checked');
+    const assets = Array.from(assetEls).map(el => el.value);
+    return { ...base,
+      income_source:   document.getElementById('kmc_s_income').value,
+      monthly_income:  document.getElementById('kmc_s_netincome').value,
+      current_assets:  assets,
+      goal_12months:   document.getElementById('kmc_s_goal12').value,
+      skills_services: document.getElementById('kmc_s_skills').value.trim(),
+      barrier:         document.getElementById('kmc_s_barrier').value.trim(),
+      budget:          document.getElementById('kmc_s_budget').value,
+      urgency:         document.getElementById('kmc_s_urgency').value,
+    };
+  }
+
+  if (kmcCurrentAgent === 'business') {
+    return { ...base,
+      business_type:   document.getElementById('kmc_b_type').value.trim(),
+      stage:           document.getElementById('kmc_b_stage').value,
+      monthly_revenue: document.getElementById('kmc_b_revenue').value,
+      target_customer: document.getElementById('kmc_b_customer').value.trim(),
+      current_offers:  document.getElementById('kmc_b_offers').value.trim(),
+      brand_heritage:  document.getElementById('kmc_b_heritage').value.trim(),
+      bottleneck:      document.getElementById('kmc_b_bottleneck').value,
+      vision:          document.getElementById('kmc_b_vision').value.trim(),
+    };
+  }
+
+  return base;
+}
+
+const KMC_LOADING_MSGS = [
+  'Cross-referencing traditional pharmacopeias...',
+  'Analyzing your sovereignty profile...',
+  'Building your custom protocol...',
+  'Calculating ROI projections...',
+  'Preparing your expert recommendations...',
+  'Finalizing your sovereign strategy...',
+  'Applying heritage frameworks...',
+  'Calibrating to your exact situation...',
+];
+let kmcLoadingInterval = null;
+
+function kmcStartLoadingText() {
+  let i = 0;
+  const el = document.getElementById('kmc_loading_sub');
+  kmcLoadingInterval = setInterval(() => {
+    if (el) el.textContent = KMC_LOADING_MSGS[i % KMC_LOADING_MSGS.length];
+    i++;
+  }, 1800);
+}
+
+function kmcStopLoadingText() {
+  if (kmcLoadingInterval) { clearInterval(kmcLoadingInterval); kmcLoadingInterval = null; }
+}
+
+async function kmcRunAnalysis() {
+  // Rate limit check
+  if (!kmcCheckRateLimit()) {
+    kmcShowError('Session limit reached. Please contact us directly at 469-928-9975 to book your consultation.');
+    return;
+  }
+
+  const data = kmcGatherData();
+  const systemPrompt = KMC_AGENT_PROMPTS[kmcCurrentAgent](data);
+
+  kmcStartLoadingText();
+
+  // Add to session memory
+  kmcSessionMemory.push({ role: 'user', content: 'Analyze my intake and provide expert consulting: ' + JSON.stringify(data) });
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4000,
+        system: systemPrompt,
+        messages: kmcSessionMemory,
+      })
     });
-    const service = document.getElementById('c_service').value;
-    const revenue = document.getElementById('c_revenue').value;
-    document.getElementById('aiRec').innerHTML = `🧠 Based on your profile, Sage Consult recommends the <strong>${service}</strong> track. Given your current revenue at <strong>${revenue}</strong>, our AI projects a <strong>340% growth potential</strong> within 12 months with the right sovereign strategy. You are ready to scale. Our team will reach out within 24 hours with a full custom roadmap.`;
-  }, 2800);
+
+    if (!response.ok) {
+      const errData = await response.json().catch(() => ({}));
+      throw new Error(errData.error?.message || 'Analysis service unavailable (HTTP ' + response.status + ')');
+    }
+
+    const result = await response.json();
+    const analysisHtml = result.content?.[0]?.text || '';
+
+    // Store response in session memory for continuity
+    kmcSessionMemory.push({ role: 'assistant', content: analysisHtml });
+    kmcAnalysisResult = analysisHtml;
+
+    kmcStopLoadingText();
+    kmcShowResults(analysisHtml);
+
+    // Save lead with agent type
+    saveLead({
+      name:     data.name,
+      email:    data.email,
+      phone:    data.phone || '',
+      interest: 'KMC Consulting — ' + (kmcCurrentAgent || 'General'),
+      source:   'Kosher Moor Consult Form'
+    });
+
+  } catch (err) {
+    kmcStopLoadingText();
+    console.error('KMC Analysis error:', err);
+    kmcShowError(err.message || 'Analysis temporarily unavailable. Please try again.');
+  }
 }
 
-function finalizeConsult(){
-  const name=document.getElementById('c_name').value.trim();
-  const email=document.getElementById('c_email').value.trim();
-  const biz=document.getElementById('c_biz').value.trim();
-  const service=document.getElementById('c_service').value;
-  const budget=document.getElementById('c_budget').value;
-  const goal=document.getElementById('c_goal').value.trim();
-  saveLead({name,email,phone:document.getElementById('c_phone').value.trim(),interest:'Consulting: '+service,source:'Consult Form'});
-  DB.consultations.push({name,email,biz,service,budget,goal,date:new Date().toLocaleDateString()});
-  document.getElementById('consultSummary').innerHTML = `<strong style="color:var(--gold);">Name:</strong> ${name}<br><strong style="color:var(--gold);">Business:</strong> ${biz||'TBD'}<br><strong style="color:var(--gold);">Service:</strong> ${service}<br><strong style="color:var(--gold);">Budget:</strong> ${budget}<br><strong style="color:var(--gold);">Goal:</strong> ${goal||'Discussed in session'}<br><strong style="color:var(--gold);">Submitted:</strong> ${new Date().toLocaleDateString()}`;
+function kmcShowResults(htmlContent) {
+  document.getElementById('kmc_loading').style.display = 'none';
+  document.getElementById('kmc_error').style.display   = 'none';
+
+  // Inject report with KMC styling
+  const inner = document.getElementById('kmc_results_inner');
+  inner.innerHTML = `
+    <div style="margin-bottom:1rem;padding:0.8rem 1rem;background:rgba(29,74,46,0.2);border-left:3px solid var(--gold);display:flex;align-items:center;gap:0.6rem;">
+      <span style="font-size:1.2rem;">◆</span>
+      <div>
+        <div style="font-family:'Cinzel Decorative',serif;font-size:0.58rem;color:var(--gold);letter-spacing:0.12em;">SOVEREIGN ANALYSIS COMPLETE</div>
+        <div style="font-size:0.72rem;color:var(--text-muted);">Prepared by The Kosher Moor Consulting Team · Confidential</div>
+      </div>
+    </div>
+    <style>
+      .kmc-report { color: var(--text-light); line-height: 1.65; font-size: 0.85rem; }
+      .kmc-section { margin-bottom: 1.4rem; padding-bottom: 1.2rem; border-bottom: 1px solid rgba(200,169,81,0.1); }
+      .kmc-section:last-child { border-bottom: none; }
+      .kmc-section h2 { font-family: 'Cinzel Decorative', serif; font-size: 0.65rem; color: var(--gold); letter-spacing: 0.08em; margin: 0 0 0.7rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(200,169,81,0.15); }
+      .kmc-section h3 { font-size: 0.75rem; color: var(--cream); margin: 0.8rem 0 0.4rem; font-family: 'Cormorant Garamond', serif; }
+      .kmc-section p { margin: 0.4rem 0; color: var(--text-muted); }
+      .kmc-section strong { color: var(--cream); }
+      .kmc-section ul, .kmc-section ol { padding-left: 1.2rem; margin: 0.5rem 0; }
+      .kmc-section li { margin: 0.3rem 0; color: var(--text-muted); }
+      .kmc-section table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+      .kmc-section td, .kmc-section th { padding: 0.4rem 0.6rem; border: 1px solid rgba(200,169,81,0.12); }
+      .kmc-section th { background: rgba(200,169,81,0.08); color: var(--gold); font-size: 0.52rem; letter-spacing: 0.1em; }
+    </style>
+    ${htmlContent}
+  `;
+
+  document.getElementById('kmc_results').style.display = 'block';
+
+  // Scroll results into view
+  setTimeout(() => {
+    const r = document.getElementById('kmc_results');
+    if (r) r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 200);
+}
+
+function kmcShowError(msg) {
+  document.getElementById('kmc_loading').style.display  = 'none';
+  document.getElementById('kmc_results').style.display  = 'none';
+  document.getElementById('kmc_error_msg').textContent  = msg;
+  document.getElementById('kmc_error').style.display    = 'block';
+}
+
+function kmcRetry() {
+  document.getElementById('kmc_error').style.display = 'none';
+  document.getElementById('kmc_loading').style.display = 'block';
+  kmcRunAnalysis();
+}
+
+function kmcFinalizeConsult() {
+  const data = kmcGatherData();
+  DB.consultations = DB.consultations || [];
+  DB.consultations.push({
+    ...data,
+    agent: kmcCurrentAgent,
+    analysis_preview: kmcAnalysisResult ? kmcAnalysisResult.substring(0, 200) + '...' : 'Pending',
+    date: new Date().toLocaleDateString()
+  });
+
+  const agentLabels = { herbal: '🌿 Herbal Mastery', sovereignty: '👑 Sovereignty Strategy', business: '🏛️ Business & Brand' };
+  document.getElementById('kmc_summary').innerHTML =
+    '<strong style="color:var(--gold);">Name:</strong> ' + data.name + '<br>' +
+    '<strong style="color:var(--gold);">Email:</strong> ' + data.email + '<br>' +
+    '<strong style="color:var(--gold);">Consulting Path:</strong> ' + (agentLabels[kmcCurrentAgent] || kmcCurrentAgent) + '<br>' +
+    '<strong style="color:var(--gold);">Location:</strong> ' + (data.location || 'Dallas, TX') + '<br>' +
+    '<strong style="color:var(--gold);">Session Investment:</strong> $150<br>' +
+    '<strong style="color:var(--gold);">Analysis Status:</strong> <span style="color:#4CAF50;">✓ Complete — Saved to Your Profile</span><br>' +
+    '<strong style="color:var(--gold);">Date:</strong> ' + new Date().toLocaleDateString();
+
   updateStorageCount();
 }
 
-// ═══ STORAGE COUNT ═══
+function closeConsultModal() {
+  closeModal('consultModal');
+  // Reset for next session
+  setTimeout(() => {
+    kmcCurrentAgent   = null;
+    kmcCurrentPage    = 1;
+    kmcAnalysisResult = null;
+    kmcSetPage(1);
+    // Clear agent card selection
+    document.querySelectorAll('.agent-select-card').forEach(c => {
+      c.style.border     = '1px solid rgba(200,169,81,0.2)';
+      c.style.background = 'rgba(0,0,0,0.2)';
+      c.style.transform  = 'none';
+      c.style.boxShadow  = 'none';
+    });
+  }, 400);
+}
+
+(function injectKMCStyles() {
+  const s = document.createElement('style');
+  s.textContent = `
+    .agent-select-card:hover {
+      border-color: rgba(200,169,81,0.5) !important;
+      background: rgba(200,169,81,0.04) !important;
+      transform: translateY(-2px) !important;
+    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .kmc-section em { color: rgba(200,169,81,0.7); font-style: italic; }
+    @media (max-width: 580px) {
+      #agentCards { grid-template-columns: 1fr !important; }
+      #consultModal .modal-box { max-width: 100vw !important; border-radius: 0 !important; }
+    }
+    @media (min-width: 581px) and (max-width: 750px) {
+      #agentCards { grid-template-columns: 1fr 1fr !important; }
+    }
+  `;
+  document.head.appendChild(s);
+})();
+
+
 function updateStorageCount(){
   const ic = document.getElementById('imgCount'); if(ic) ic.textContent = DB.products.length;
   const cc = document.getElementById('custCount'); if(cc) cc.textContent = DB.leads.length;
@@ -3558,7 +3991,6 @@ function updateStorageCount(){
 }
 function updateStorageTab(){ updateStorageCount(); }
 
-// ═══ LEAD POP (exit intent) ═══
 let popShown = false;
 function showLeadPop(){
   const pop = document.getElementById('leadPop');
@@ -3574,7 +4006,6 @@ document.addEventListener('mouseleave', e => {
 setTimeout(()=>{ if(!popShown){ popShown=true; showLeadPop(); } }, 45000);
 
 
-// ═══ OPERATION HOURS STATUS ═══
 function updateHoursStatus(){
   const now = new Date();
   const day = now.getDay(); // 0=Sun,1=Mon...6=Sat
@@ -3603,7 +4034,6 @@ function updateHoursStatus(){
   }
 }
 
-// ═══ WELCOME BANNER ═══
 function showWelcomeBanner(){
   const banner = document.getElementById('welcomeBanner');
   if(banner){
@@ -3612,10 +4042,7 @@ function showWelcomeBanner(){
   }
 }
 
-// ═══ AI IMAGE CREATOR ═══
-const productEmojis = {tea:['🍵','🌿','🫖','🌸','🌺'],tincture:['🧪','💊','🌑','💧','🫙'],herb:['🌿','🫚','🌱','🍃','💚'],merch:['👕','🧥','🧢','👑','✨'],care:['🪴','🌳','🚗','🔧','⭐']};
-const imgStyles = ['luxury-dark','minimalist','earthy','vibrant','heritage','clean'];
-let selectedImgSrc = null;
+const productEmojis = {tea:['🍵','🌿','🫖','🌸','🌺'],tincture:['🧪','💊','🌑','💧','🫙'],herb:['🌿','🫚','🌱','🍃','💚'],merch:['👕','🧥','🧢','👑','✨'],care:['🪴','🌳','🚗','🔧','⭐']};let selectedImgSrc = null;
 const savedImages = [];
 
 function generateProductImage(){
@@ -3683,7 +4110,6 @@ function useSelectedImage(){
 }
 
 
-// ═══ LIVE DATE DISPLAY (US Date + Islamic Date + CST Time) ═══
 function getIslamicDate(date) {
   // Accurate Hijri calculation using epoch method
   const jd = Math.floor((date.getTime() / 86400000) + 2440587.5);
@@ -3723,7 +4149,6 @@ function updateLiveDateDisplay() {
 setInterval(updateLiveDateDisplay, 1000);
 updateLiveDateDisplay();
 
-// ═══ TAX & FINANCIAL SYSTEM ═══
 const TAX_DB = { transactions: [], nextId: 1 };
 const expenseCategories = ['Inventory / Cost of Goods','Shipping & Fulfillment','Marketing & Advertising',
   'Website & Software','Office Supplies','Vehicle / Mileage','Professional Services (CPA/Legal)',
@@ -3862,7 +4287,6 @@ function clearTaxYear() {
   updateTaxStats();
 }
 
-// ═══ ORDER TRACKING SYSTEM ═══
 const TRACKING_DB = [];
 
 function sendTrackingNotification() {
@@ -3885,7 +4309,7 @@ function sendTrackingNotification() {
   // Show confirmation in chat (simulate notification sent)
   const msg = 'Tracking notification sent to ' + email + '! ' + carrier + ' #' + num + (eta ? ' · Estimated delivery: ' + eta : '') + ' 📦';
   if (document.getElementById('chatPanel').classList.contains('open')) {
-    addMsg(msg, 'bot');
+    addBotMsg(msg);
   }
 
   const s = document.getElementById('trackSuccess');
@@ -3924,7 +4348,6 @@ function checkCustomerTracking(email) {
   return null;
 }
 
-// ═══ INIT (runs after full DOM is ready) ═══
 document.addEventListener('DOMContentLoaded', function() {
   renderProductTable();
   renderReviewsGrid();
@@ -3934,6 +4357,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initial dynamic renders
   renderStorefront('all');
   renderServicesGrid();
+  supabaseInit(); // Load live data from Supabase
+  // Init email + Stripe
+  setTimeout(initEmailJS, 1000);
   // Store reveal observer reference for dynamic cards
   window._revealObserver = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); window._revealObserver.unobserve(e.target); }});
@@ -3975,11 +4401,7 @@ function sendEmailCampaign() {
   setTimeout(function() { if(s) s.style.display='none'; }, 4000);
 }
 
-
-
-// ══════════════════════════════════════════════════
 //  PAYMENT SYSTEM — Full Multi-Method Checkout
-// ══════════════════════════════════════════════════
 let currentCart = [];
 let currentPayMethod = 'card';
 let checkoutSubmitting = false;
@@ -4005,6 +4427,16 @@ function openCheckout(item) {
   renderCartSummary();
   renderOrderTotal();
   openModal('paymentModal');
+
+  // Mount Stripe Payment Element after modal opens
+  setTimeout(function() {
+    var subtotal = currentCart.reduce(function(s,i){ return s+(i.price*(i.qty||1)); }, 0);
+    var shipping = subtotal > 60 ? 0 : 7.99;
+    var tax      = subtotal * STRIPE_CONFIG.taxRate;
+    var total    = subtotal + shipping + tax;
+    var amountCents = Math.round(total * 100);
+    if (amountCents > 0) mountStripePaymentElement(amountCents);
+  }, 200);
 }
 
 
@@ -4064,8 +4496,6 @@ function selectPayMethod(method, el) {
   if (form) { form.style.display = 'block'; form.classList.add('active-form'); }
 }
 
-
-
 function formatCardNum(input) {
   let v = input.value.replace(/\D/g, '').substring(0, 16);
   input.value = v.replace(/(.{4})/g, '$1 ').trim();
@@ -4092,7 +4522,7 @@ function applePayPrompt() {
   }
 }
 
-function submitOrder() {
+async function submitOrder() {
   if (checkoutSubmitting) return;
 
   const shipName  = (document.getElementById('pay_ship_name').value || '').trim();
@@ -4102,7 +4532,6 @@ function submitOrder() {
   const shipState = (document.getElementById('pay_ship_state').value || '').trim();
   const shipZip   = (document.getElementById('pay_ship_zip').value || '').trim();
 
-  // ── Validate shipping fields ──
   if (!shipName) { showCheckoutError('Please enter your full name.'); return; }
   if (!shipEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(shipEmail)) {
     showCheckoutError('Please enter a valid email address.'); return;
@@ -4112,15 +4541,9 @@ function submitOrder() {
   if (!shipState) { showCheckoutError('Please enter your state.'); return; }
   if (!shipZip)   { showCheckoutError('Please enter your ZIP code.'); return; }
 
-  // ── Validate per payment method ──
   const method = currentPayMethod;
   if (method === 'card') {
-    const cardNum = (document.getElementById('pay_card').value || '').replace(/\s/g,'');
-    const cvv     = (document.getElementById('pay_cvv').value || '');
-    const expiry  = (document.getElementById('pay_exp').value || '');
-    if (cardNum.length < 15) { showCheckoutError('Please enter a valid card number.'); return; }
-    if (!/^\d{3,4}$/.test(cvv)) { showCheckoutError('Please enter a valid CVV (3-4 digits).'); return; }
-    if (!expiry || !/^(0[1-9]|1[0-2])\/([0-9]{2})$/.test(expiry)) { showCheckoutError('Please enter a valid expiry date (MM/YY).'); return; }
+    // Stripe Payment Element handles its own validation — just confirm below
   } else if (method === 'paypal') {
     const ppEmail = (document.getElementById('pay_pp_email').value || '').trim();
     if (!ppEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ppEmail)) {
@@ -4143,43 +4566,77 @@ function submitOrder() {
     }
   }
 
-  // ── Lock submit ──
   checkoutSubmitting = true;
   var btn = document.getElementById('checkoutBtn');
   if (btn) { btn.disabled = true; btn.textContent = '⏳ Processing...'; }
 
-  // ── Generate order reference ──
   var orderRef = 'KM-' + Date.now().toString(36).toUpperCase();
   var subtotal  = currentCart.reduce(function(s,i){ return s+(i.price*(i.qty||1)); }, 0);
-  var shipping  = subtotal>60 ? 0 : 7.99;
-  var tax       = subtotal*0.0825;
-  var total     = (subtotal+shipping+tax).toFixed(2);
+  var shipping  = subtotal > 60 ? 0 : 7.99;
+  var tax       = subtotal * STRIPE_CONFIG.taxRate;
+  var total     = (subtotal + shipping + tax).toFixed(2);
 
-  // ── Save to CRM ──
+  // ── Stripe Payment Element confirm ──────────────────────────
+  if (method === 'card' && stripeElements) {
+    const stripe = getStripe();
+    try {
+      const { error } = await stripe.confirmPayment({
+        elements: stripeElements,
+        confirmParams: {
+          return_url: STRIPE_CONFIG.successUrl,
+          payment_method_data: {
+            billing_details: {
+              name: shipName,
+              email: shipEmail,
+              address: {
+                line1:       shipAddr,
+                city:        shipCity,
+                state:       shipState,
+                postal_code: shipZip,
+                country:     'US',
+              },
+            },
+          },
+        },
+        redirect: 'if_required',
+      });
+
+      if (error) {
+        showCheckoutError(error.message);
+        checkoutSubmitting = false;
+        if (btn) { btn.disabled = false; btn.textContent = '◆ Complete Order Securely'; }
+        return;
+      }
+    } catch(err) {
+      showCheckoutError('Payment failed. Please try again.');
+      checkoutSubmitting = false;
+      if (btn) { btn.disabled = false; btn.textContent = '◆ Complete Order Securely'; }
+      return;
+    }
+  }
+
+  // ── Save lead + order to DB ───────────────────────────────
   saveLead({
     name: shipName, email: shipEmail, phone: '',
-    interest: 'ORDER '+orderRef+' — '+currentCart.map(function(i){return i.name;}).join(', '),
-    source: 'Checkout — '+method.toUpperCase()
+    interest: 'ORDER ' + orderRef + ' — ' + currentCart.map(function(i){ return i.name; }).join(', '),
+    source: 'Checkout — ' + method.toUpperCase()
   });
+  dbSaveOrder(orderRef, shipName, shipEmail, currentCart.map(i=>({name:i.name,qty:i.qty||1,price:i.price})), total, method);
 
-  // ── Show success with order ref ──
+  checkoutSubmitting = false;
+  var s = document.getElementById('paySuccess');
+  if (s) {
+    s.innerHTML = '◆ Order <strong style="color:var(--gold);">' + orderRef + '</strong> confirmed! '
+      + 'Total: <strong style="color:var(--gold);">$' + total + '</strong>. '
+      + 'Confirmation &amp; tracking will be sent to <strong>' + shipEmail + '</strong>. 👑';
+    s.style.display = 'block';
+  }
+  if (btn) { btn.disabled = false; btn.textContent = '◆ Complete Order Securely'; }
   setTimeout(function() {
-    checkoutSubmitting = false;
-    var s = document.getElementById('paySuccess');
-    if (s) {
-      s.innerHTML = '◆ Order <strong style="color:var(--gold);">'+orderRef+'</strong> confirmed! '
-        + 'Total: <strong style="color:var(--gold);">$'+total+'</strong>. '
-        + 'Confirmation &amp; tracking will be sent to <strong>'+shipEmail+'</strong>. 👑';
-      s.style.display = 'block';
-    }
-    if (btn) { btn.disabled = false; btn.textContent = '◆ Complete Order Securely'; }
-    // Auto close after 5s
-    setTimeout(function() {
-      closeModal('paymentModal');
-      currentCart = [];
-      var s2 = document.getElementById('paySuccess'); if(s2) s2.style.display='none';
-    }, 5000);
-  }, 1200); // Simulate processing
+    closeModal('paymentModal');
+    currentCart = [];
+    var s2 = document.getElementById('paySuccess'); if(s2) s2.style.display='none';
+  }, 5000);
 }
 
 function showCheckoutError(msg) {
@@ -4215,11 +4672,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// ══════════════════════════════════════════════════════════
 //  ADMIN SECURITY — Login Gate + 2FA + Session Management
-// ══════════════════════════════════════════════════════════
 
-// ── CONFIGURATION (change these before deploying) ──
 const ADMIN_CREDS = {
   // Hash-based comparison — never store plain text passwords in production
   // These are SHA-256 hashes. Default: user="admin" pass="KM@Secure2024!"
@@ -4394,7 +4848,6 @@ function openAdmin() {
   openAdminGate();
 }
 
-// ═══ EMAIL INTEGRATION — Mailchimp / Klaviyo connector ═══
 const EMAIL_INTEGRATIONS = {
   // Set your API keys here (in production, use environment variables / server-side)
   mailchimp: {
@@ -4437,8 +4890,6 @@ async function syncLeadToKlaviyo(lead) {
 }
 
 // Wrap saveLead to also sync to email platforms
-const _originalSaveLead = typeof saveLead === 'function' ? saveLead : null;
-
 function saveLead(lead) {
   if (!lead || !lead.email) return;
   if (!DB.leads) DB.leads = [];
@@ -4460,612 +4911,16 @@ function saveLead(lead) {
     // Async sync to email platforms
     syncLeadToMailchimp(newLead);
     syncLeadToKlaviyo(newLead);
+    dbSaveLead(newLead); // Save to Supabase
   }
 }
 
-// ══════════════════════════════════════════════════
-//  MASTER IP DOCUMENT DOWNLOADS
-// ══════════════════════════════════════════════════
-function downloadTrademark() {
-  var text = `================================================================================
-THE KOSHER MOOR™ — MASTER TRADEMARK REGISTRATION NOTICE
-DECLARATION OF TRADEMARK OWNERSHIP & INTELLECTUAL PROPERTY RIGHTS
-================================================================================
-
-DOCUMENT TYPE:     Master Trademark Declaration & Notice of Rights
-OWNER:             [YOUR FULL LEGAL NAME]
-BUSINESS ENTITY:   The Kosher Moor™ / [YOUR LLC OR ENTITY NAME]
-EFFECTIVE DATE:    [DATE OF FIRST USE IN COMMERCE]
-LAST UPDATED:      [TODAY'S DATE]
-JURISDICTION:      United States of America (Federal) + All Applicable States
-
-================================================================================
-PART I — DECLARATION OF TRADEMARK OWNERSHIP
-================================================================================
-
-I, [YOUR FULL LEGAL NAME], hereby declare under penalty of perjury that I am
-the original creator, founder, and sole owner of all trademark rights in the
-following marks, names, identifiers, and related intellectual property:
-
-PRIMARY MARKS:
-
-  1. THE KOSHER MOOR™
-     Class 30 (Herbal teas, food and beverage products)
-     Class 35 (Online retail services, business consulting)
-     Class 44 (Herbal wellness, health advisory services)
-
-  2. KOSHER MOOR™
-     All classes listed above plus:
-     Class 36 (Financial, insurance services)
-     Class 37 (Maintenance, lawn care, installation services)
-     Class 37 (Automotive services, tire installation)
-
-  3. SOVEREIGN™ (as used in connection with The Kosher Moor brand)
-  4. KM™ (logo mark as used in commerce by this entity)
-  5. THE MOOR™ (abbreviated trade name)
-  6. SOVEREIGN MARKETPLACE™
-
-DESIGN MARKS:
-  - The Kosher Moor crest, emblem, and ornamental seal design
-  - The gold/emerald/obsidian color scheme as applied to the brand
-  - All original logos, iconography, and visual identifiers created for
-    The Kosher Moor brand
-
-DATE OF FIRST USE IN COMMERCE: [DATE — must be actual first commercial use]
-DATE OF FIRST USE IN INTERSTATE COMMERCE: [DATE]
-GEOGRAPHIC AREA OF USE: United States of America, all fifty states
-
-================================================================================
-PART II — COMMON LAW TRADEMARK RIGHTS
-================================================================================
-
-Under United States common law, trademark rights arise from actual USE in
-commerce, not federal registration. This declaration serves as written notice
-that the above marks have been and are being used in commerce in connection
-with the sale of genuine goods and services.
-
-LEGAL BASIS:
-  - Lanham Act, 15 U.S.C. § 1051 et seq. (Federal Trademark Law)
-  - Common law trademark rights (established by use in commerce)
-  - Uniform Deceptive Trade Practices Act (adopted in applicable states)
-  - Texas Business & Commerce Code § 16.001 et seq. (if operating in Texas)
-
-By virtue of prior and continuous use in commerce, the Owner possesses
-COMMON LAW TRADEMARK RIGHTS in the above marks enforceable in all geographic
-areas where the marks have been used, without federal registration.
-
-================================================================================
-PART III — FEDERAL REGISTRATION NOTICE & INTENT
-================================================================================
-
-The Owner intends to file and/or has filed applications with the United States
-Patent and Trademark Office (USPTO) for federal registration of the above marks.
-
-HOW TO FILE FOR FEDERAL REGISTRATION:
-  1. Go to: www.uspto.gov/trademarks
-  2. Use the Trademark Electronic Application System (TEAS Plus) — $250/class
-  3. Conduct a clearance search first at: tmsearch.uspto.gov
-  4. Select proper International Class(es) for your goods/services
-  5. Provide specimens showing use in commerce (website screenshots qualify)
-  6. File under Section 1(a) Use in Commerce or 1(b) Intent to Use
-
-ATTORNEY RECOMMENDATION:
-  Consider retaining a trademark attorney for federal registration. The
-  application process takes 12–18 months. Once registered, you receive:
-  - Nationwide constructive notice to all subsequent users
-  - Right to use ® symbol (vs. ™ for unregistered marks)
-  - Ability to block infringing imports through U.S. Customs
-  - Access to federal courts for infringement actions
-  - Incontestability rights after 5 years of registration
-
-UNTIL FEDERAL REGISTRATION IS COMPLETE:
-  Use the ™ symbol (not ®) on all marks listed above. Common law rights are
-  fully enforceable in the geographic area of use.
-
-================================================================================
-PART IV — NOTICE TO ALL PARTIES
-================================================================================
-
-ALL PERSONS AND ENTITIES ARE HEREBY ON NOTICE:
-
-The marks, names, logos, trade dress, brand identity, and associated
-intellectual property of "The Kosher Moor™" are the exclusive property of
-[YOUR FULL LEGAL NAME] / [YOUR ENTITY NAME].
-
-THE FOLLOWING ACTS ARE STRICTLY PROHIBITED WITHOUT WRITTEN AUTHORIZATION:
-
-  1. Use of the name "The Kosher Moor," "Kosher Moor," or any confusingly
-     similar name in connection with any goods, services, or business.
-
-  2. Reproduction, imitation, or colorable imitation of any Kosher Moor
-     trademark, logo, design mark, or trade dress.
-
-  3. Registration of any domain name, social media handle, or business name
-     that is identical or confusingly similar to the above marks.
-
-  4. Use of the marks in metatags, search engine optimization, or advertising
-     in a manner likely to cause consumer confusion.
-
-INFRINGEMENT MAY RESULT IN:
-
-  - Civil action for trademark infringement under 15 U.S.C. § 1114
-  - Civil action for unfair competition under 15 U.S.C. § 1125(a)
-  - Claim for actual damages, disgorgement of profits, and attorney's fees
-  - Injunctive relief including emergency temporary restraining order (TRO)
-  - If willful infringement is proven: statutory damages up to $2,000,000 per
-    mark per type of goods/services under 15 U.S.C. § 1117(c)
-  - Criminal referral for counterfeiting under 18 U.S.C. § 2320
-
-================================================================================
-PART V — TRADEMARK MONITORING & ENFORCEMENT
-================================================================================
-
-The Owner actively monitors the following for potential infringement:
-  - USPTO trademark database (for conflicting applications/registrations)
-  - State trademark registries
-  - Domain name registrations (WHOIS / ICANN)
-  - Social media platforms
-  - Search engine results
-  - Online marketplace listings (Amazon, Etsy, eBay, Shopify)
-  - E-commerce platforms
-
-ENFORCEMENT PROTOCOL:
-  1. Cease and desist letter sent via certified mail and email
-  2. DMCA takedown / platform report submitted simultaneously
-  3. If no cure within 14 days: litigation filing in U.S. District Court
-  4. Emergency TRO application for ongoing or willful infringement
-
-TO REPORT SUSPECTED INFRINGEMENT CONTACT:
-  Phone: 469-928-9975
-  Email: info@thekoshermoor.com
-  Website: thekoshermoor.com
-  [Add physical address when ready]
-
-================================================================================
-PART VI — SWORN DECLARATION
-================================================================================
-
-I, [YOUR FULL LEGAL NAME], declare under penalty of perjury under the laws
-of the United States of America and the State of [YOUR STATE] that:
-
-  1. I am the original creator and sole owner of all trademark rights described
-     in this document.
-
-  2. The marks have been used in genuine commerce in connection with the sale
-     of authentic goods and services.
-
-  3. To the best of my knowledge, no other person or entity has a superior
-     right to the above marks in the geographic areas where they have been used.
-
-  4. All facts stated herein are true, accurate, and complete to the best of
-     my knowledge and belief.
-
-Signature: _______________________________
-
-Printed Name: [YOUR FULL LEGAL NAME]
-
-Title: Owner / Founder, The Kosher Moor™
-
-Date: _______________________________
-
-Witnessed By: _______________________________
-
-Witness Printed Name: _______________________________
-
-================================================================================
-NOTARIZATION
-================================================================================
-
-State of ___________________
-County of __________________
-
-Subscribed and sworn to before me on this ________ day of ______________,
-20_____, by [YOUR FULL LEGAL NAME].
-
-Notary Public Signature: _______________________________
-Printed Name:            _______________________________
-My Commission Expires:   _______________________________
-
-[AFFIX NOTARY SEAL HERE]
-
-================================================================================
-IMPORTANT NEXT STEPS FOR MAXIMUM PROTECTION:
-  1. Sign and notarize this document immediately
-  2. File for federal trademark registration at www.uspto.gov ($250/class)
-  3. Register your state trademark ($25–$50 in most states)
-  4. Register all related domain names (.com, .net, .org, .co)
-  5. Secure social media handles on all platforms
-  6. Add © and ™ notices to your website and all materials
-  7. Keep records of first date of use in commerce (save invoices, receipts)
-  8. Consult a licensed trademark attorney for guidance
-================================================================================
-`;
-  var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'KosherMoor_MASTER_TRADEMARK_Declaration.txt';
-  a.click();
-}
-
-function downloadCopyright() {
-  var text = `================================================================================
-THE KOSHER MOOR™ — MASTER COPYRIGHT REGISTRATION NOTICE
-DECLARATION OF COPYRIGHT OWNERSHIP & ALL RIGHTS RESERVED
-================================================================================
-
-DOCUMENT TYPE:     Master Copyright Declaration, Notice of Rights & Register
-AUTHOR/OWNER:      [YOUR FULL LEGAL NAME]
-BUSINESS ENTITY:   The Kosher Moor™ / [YOUR LLC OR ENTITY NAME]
-DATE OF CREATION:  [ORIGINAL CREATION DATE — e.g., January 2024]
-LAST UPDATED:      [TODAY'S DATE]
-JURISDICTION:      United States of America — 17 U.S.C. § 101 et seq.
-
-ALL RIGHTS RESERVED. © [YEAR] THE KOSHER MOOR™. ALL RIGHTS RESERVED.
-NO PORTION OF THIS WORK MAY BE REPRODUCED WITHOUT EXPRESS WRITTEN CONSENT.
-
-================================================================================
-PART I — DECLARATION OF COPYRIGHT OWNERSHIP
-================================================================================
-
-I, [YOUR FULL LEGAL NAME], hereby declare under penalty of perjury that I am
-the original author and sole owner of copyright in the following original works
-of authorship created for and in connection with The Kosher Moor™:
-
-SECTION A — WEBSITE & DIGITAL WORKS
-
-  Work #1:  The Kosher Moor Website
-            URL: [YOUR DOMAIN]
-            Description: Complete website including all HTML, CSS, JavaScript,
-                         layout, design architecture, user interface, and
-                         interactive features.
-            Date Created: [DATE]
-            Nature: Literary Work / Computer Program / Audiovisual Work
-
-  Work #2:  Website Visual Design & Trade Dress
-            Description: All graphic design elements including color scheme
-                         (gold #C8A951, emerald #1A4A2E, obsidian #0A0A08),
-                         typography selections, layout compositions, hero
-                         imagery, decorative elements, and overall aesthetic.
-            Date Created: [DATE]
-            Nature: Pictorial/Graphic Work
-
-  Work #3:  Brand Copy & Marketing Text
-            Description: All original written content including product
-                         descriptions, service pages, taglines, promotional
-                         copy, email campaign text, and all other written
-                         materials created for The Kosher Moor brand.
-            Date Created: [DATE]
-            Nature: Literary Work
-
-  Work #4:  The Kosher Moor Logo & Crest Design
-            Description: Original logo design, crest, emblem, and all related
-                         graphic design marks created for The Kosher Moor.
-            Date Created: [DATE]
-            Nature: Pictorial/Graphic Work
-
-SECTION B — BUSINESS MATERIALS
-
-  Work #5:  Product Formulations & Descriptions
-            Description: Original herbal blend formulations, product names,
-                         and all descriptive text associated therewith.
-            Date Created: [DATE]
-            Nature: Literary Work / Trade Secret (dual protection)
-
-  Work #6:  Email Campaigns & Marketing Materials
-            Description: All original email campaign templates, promotional
-                         graphics, newsletters, and marketing collateral.
-            Date Created: [DATE]
-            Nature: Literary Work / Audiovisual Work
-
-  Work #7:  Business Systems & Processes (as documented)
-            Description: All original business process documentation,
-                         consulting frameworks, and operational systems.
-            Date Created: [DATE]
-            Nature: Literary Work
-
-SECTION C — SOCIAL MEDIA & CONTENT
-
-  Work #8:  All social media posts, images, videos, and content published
-            under The Kosher Moor brand across all platforms.
-  Work #9:  Photography and product imagery created for or on behalf of
-            The Kosher Moor.
-  Work #10: Any original music, audio, or video content created for
-            The Kosher Moor brand.
-
-================================================================================
-PART II — LEGAL BASIS FOR COPYRIGHT
-================================================================================
-
-AUTOMATIC PROTECTION:
-Under the Copyright Act (17 U.S.C. § 102), copyright protection attaches
-AUTOMATICALLY at the moment of creation and fixation in tangible form.
-Registration with the U.S. Copyright Office is NOT required for copyright
-to exist — but registration provides significant legal advantages.
-
-LEGAL FOUNDATION:
-  - Copyright Act of 1976 — 17 U.S.C. § 101 et seq.
-  - Berne Convention for the Protection of Literary and Artistic Works
-  - WIPO Copyright Treaty
-  - Digital Millennium Copyright Act (DMCA) — 17 U.S.C. § 512
-  - Computer Fraud and Abuse Act (CFAA) — 18 U.S.C. § 1030
-
-DURATION OF PROTECTION:
-  - Works created by an individual: Life of author + 70 years
-  - Works for hire / corporate works: 95 years from publication
-                                   OR 120 years from creation
-                                   (whichever expires first)
-
-SCOPE OF PROTECTION:
-  Copyright protects:
-    ✓ Original text, written content, and literary expression
-    ✓ Software code (HTML, CSS, JavaScript)
-    ✓ Visual designs, graphics, illustrations
-    ✓ Photographs and original imagery
-    ✓ Audiovisual works, videos
-    ✓ Compilations and databases with original selection/arrangement
-    ✓ Architectural works
-
-  Copyright does NOT protect:
-    ✗ Ideas, concepts, facts, or methods
-    ✗ Generic names or common phrases (use trademark for this)
-    ✗ Works not fixed in tangible form
-
-================================================================================
-PART III — FEDERAL COPYRIGHT REGISTRATION
-================================================================================
-
-WHY REGISTER WITH THE U.S. COPYRIGHT OFFICE:
-
-  1. Registration creates PUBLIC RECORD of ownership
-  2. Required to file infringement lawsuit in federal court (for U.S. works)
-  3. If registered BEFORE infringement: you can recover STATUTORY DAMAGES
-     ($750 – $30,000 per work; up to $150,000 for willful infringement)
-     AND attorney's fees — without proving actual damages
-  4. Creates legal presumption that registration is valid and you own the work
-  5. Allows CBP (Customs) to seize infringing imports
-
-HOW TO REGISTER:
-  Online: www.copyright.gov/registration
-  Fee:    $35–$55 per registration (single work online)
-          $65 for paper filing
-          Group registration available for multiple works
-
-RECOMMENDED REGISTRATIONS FOR THE KOSHER MOOR:
-  1. Website (as literary work + computer program)
-  2. Visual design/graphics (pictorial work)
-  3. Written content / marketing copy
-  4. Logo and brand design elements
-
-  File within 3 months of first publication for full statutory damages protection.
-
-================================================================================
-PART IV — NOTICE TO ALL PARTIES — ALL RIGHTS RESERVED
-================================================================================
-
-© [YEAR] THE KOSHER MOOR™. [YOUR FULL LEGAL NAME]. ALL RIGHTS RESERVED.
-
-ALL PERSONS AND ENTITIES ARE HEREBY ON NOTICE:
-
-All original works listed in Part I of this document are protected by United
-States and international copyright law. The Owner reserves ALL rights in and
-to these works including but not limited to:
-
-  - The right to reproduce
-  - The right to create derivative works
-  - The right to distribute
-  - The right to publicly display
-  - The right to publicly perform
-  - The right to transmit via digital audio
-
-THE FOLLOWING ACTS ARE STRICTLY PROHIBITED WITHOUT PRIOR WRITTEN CONSENT:
-
-  1. Copying, reproducing, or duplicating any portion of the website, brand
-     materials, product descriptions, or other protected works.
-
-  2. Creating derivative works based on or inspired by the protected works
-     without written license from the Owner.
-
-  3. Distributing, selling, or transmitting the protected works or any
-     substantial portion thereof.
-
-  4. Scraping, harvesting, or automated extraction of website content.
-
-  5. Reverse engineering, decompiling, or extracting the source code of
-     the website.
-
-  6. Using protected content in training datasets for artificial intelligence
-     or machine learning systems without express written consent.
-
-  7. Framing, inline linking, or mirroring the website in a way that implies
-     ownership or affiliation.
-
-FAIR USE NOTICE:
-  Limited quotation for purposes of news reporting, criticism, comment, or
-  scholarship may be permissible under 17 U.S.C. § 107. Such use must be
-  minimal, transformative, and must clearly attribute the work to The Kosher
-  Moor™ / [YOUR FULL LEGAL NAME].
-
-================================================================================
-PART V — ENFORCEMENT RIGHTS & REMEDIES
-================================================================================
-
-CIVIL REMEDIES AVAILABLE TO OWNER (17 U.S.C. § 504–505):
-
-  ACTUAL DAMAGES:
-    - The owner's actual damages (lost profits, licensing value)
-    - PLUS any additional profits of the infringer attributable to infringement
-
-  STATUTORY DAMAGES (if registered before infringement):
-    - $750 to $30,000 per infringed work (court's discretion)
-    - Up to $150,000 per work if infringement is WILLFUL
-    - As low as $200 for innocent infringement
-
-  ATTORNEY'S FEES:
-    - Court may award full attorney's fees to prevailing party if registered
-
-  INJUNCTIVE RELIEF:
-    - Court order immediately stopping infringing activity
-    - Emergency temporary restraining order (TRO) available for urgent cases
-    - Seizure and impoundment of infringing materials and equipment
-
-  CRIMINAL PENALTIES (Willful Infringement — 17 U.S.C. § 506):
-    - Up to 5 years imprisonment for willful infringement for commercial gain
-    - Up to 10 years for repeat offenders
-
-DMCA ENFORCEMENT:
-  For online infringement, the Owner will submit DMCA Takedown Notices to:
-    - Web hosting companies
-    - Domain registrars
-    - Search engines (Google, Bing)
-    - Social media platforms (Instagram, TikTok, Facebook, YouTube)
-    - App stores and marketplaces
-    - CDN and cloud providers
-
-  DMCA Notices submitted in good faith are legally binding. False counter-
-  notices expose the counternoticee to perjury liability.
-
-================================================================================
-PART VI — DMCA AGENT REGISTRATION & CONTACT
-================================================================================
-
-DESIGNATED COPYRIGHT AGENT FOR DMCA NOTICES:
-  [YOUR FULL LEGAL NAME]
-  [YOUR EMAIL ADDRESS]
-  [YOUR BUSINESS MAILING ADDRESS]
-  [YOUR PHONE NUMBER]
-
-  Note: Register your DMCA agent at: www.copyright.gov/dmca-directory
-  Fee: $6/year. This is required to receive full DMCA safe harbor protections
-  if you host any user-generated content.
-
-TO SUBMIT A DMCA NOTICE OF CLAIMED INFRINGEMENT TO THE OWNER:
-  (If you believe your content has been mistakenly included)
-  Include: Your contact info, description of the claimed work, URL of
-  infringing material, statement of good faith, statement of accuracy,
-  and your physical or electronic signature.
-
-================================================================================
-PART VII — TRADE SECRET PROTECTION (Supplemental)
-================================================================================
-
-In addition to copyright, the following elements of The Kosher Moor™ business
-are protected as TRADE SECRETS under the Defend Trade Secrets Act (DTSA),
-18 U.S.C. § 1836, and the Texas Uniform Trade Secrets Act (TUTSA) or
-applicable state law:
-
-  1. Herbal blend formulations and sourcing relationships
-  2. Proprietary customer database and CRM data
-  3. Consulting methodology and frameworks
-  4. Pricing strategies and supplier agreements
-  5. Business systems, workflows, and automation code
-  6. Product development pipeline and R&D
-
-TRADE SECRET PROTECTION REQUIRES:
-  - Reasonable measures to keep information secret (password protection,
-    NDAs, access controls, confidentiality policies)
-  - The information must derive economic value from being secret
-
-REMEDIES FOR TRADE SECRET MISAPPROPRIATION:
-  - Injunctive relief
-  - Actual damages + unjust enrichment
-  - If willful and malicious: double damages + attorney's fees
-  - Federal criminal prosecution under 18 U.S.C. § 1832
-
-================================================================================
-PART VIII — SWORN DECLARATION OF AUTHORSHIP & OWNERSHIP
-================================================================================
-
-I, [YOUR FULL LEGAL NAME], declare under penalty of perjury under the laws
-of the United States of America and the State of [YOUR STATE] that:
-
-  1. I am the original author and/or rightful owner by assignment of all
-     works described in this document.
-
-  2. The works were created independently and are not copies of any other
-     work. To the best of my knowledge, they do not infringe any third-party
-     intellectual property rights.
-
-  3. I have not granted any exclusive license, assignment, or transfer of
-     copyright that would extinguish my rights without written record.
-
-  4. All facts stated herein are true and correct to the best of my knowledge
-     and belief.
-
-  5. I make this declaration in good faith and understand that false statements
-     subject me to penalties under 18 U.S.C. § 1001 and 28 U.S.C. § 1746.
-
-Signature: _______________________________
-
-Printed Name: [YOUR FULL LEGAL NAME]
-
-Title: Author, Owner & Founder — The Kosher Moor™
-
-Date: _______________________________
-
-================================================================================
-NOTARIZATION
-================================================================================
-
-State of ___________________
-County of __________________
-
-Subscribed and sworn to before me on this ________ day of ______________,
-20_____, by [YOUR FULL LEGAL NAME].
-
-Notary Public Signature: _______________________________
-Printed Name:            _______________________________
-My Commission Expires:   _______________________________
-
-[AFFIX NOTARY SEAL HERE]
-
-================================================================================
-COMPREHENSIVE IP PROTECTION CHECKLIST — PRIORITY ACTION ITEMS:
-================================================================================
-
-  IMMEDIATE (This Week):
-  [ ] Sign and notarize this document and the Trademark Declaration
-  [ ] Register DMCA agent: www.copyright.gov/dmca-directory ($6/year)
-  [ ] Secure all domain name variations (.com, .net, .org, .co, .us)
-  [ ] Lock down social media handles on: Instagram, TikTok, Facebook,
-      X/Twitter, YouTube, Pinterest, LinkedIn, Snapchat
-  [ ] Add © notice and Terms of Use to website
-
-  SHORT TERM (This Month):
-  [ ] File federal copyright registration: www.copyright.gov ($35–55/work)
-  [ ] File federal trademark application: www.uspto.gov ($250/class)
-  [ ] Consult a trademark/IP attorney for formal review
-
-  ONGOING:
-  [ ] Document all new creations with dates, drafts, and version history
-  [ ] Execute NDAs with all contractors, employees, and business partners
-  [ ] Monitor for infringement (Google Alerts, Copyscape, TinEye for images)
-  [ ] Renew domain registrations and trademark registrations on schedule
-  [ ] Review and update IP registrations when new works are created
-
-================================================================================
-© [YEAR] THE KOSHER MOOR™. ALL RIGHTS RESERVED.
-[YOUR FULL LEGAL NAME] — OWNER, AUTHOR & SOVEREIGN.
-UNAUTHORIZED USE IS A FEDERAL OFFENSE.
-================================================================================
-`;
-  var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'KosherMoor_MASTER_COPYRIGHT_Declaration.txt';
-  a.click();
-}
-
-
-
-// ── Smooth scroll helper (bypasses iframe anchor interception) ──
 function scrollTo(id) {
   var el = document.getElementById(id);
   if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 }
 
-// ══════════════════════════════════════════════════════════════
 //  DYNAMIC STOREFRONT — unlimited products + services
-// ══════════════════════════════════════════════════════════════
 
 // Category display names and meta
 const CAT_META = {
@@ -5153,9 +5008,7 @@ function filterProducts(cat) {
   renderStorefront(cat);
 }
 
-// ══════════════════════════════════════════════════════════════
 //  DYNAMIC SERVICES
-// ══════════════════════════════════════════════════════════════
 
 // Services DB — mirrors static HTML services, fully editable
 if (!DB.services) {
@@ -5190,11 +5043,34 @@ function renderServicesGrid() {
   }
 }
 
-// ══════════════════════════════════════════════════════════════
 //  IMPROVED addProduct — image support + instant storefront update
-// ══════════════════════════════════════════════════════════════
 
 function addProduct() {
+  // Check if we're editing an existing product
+  const editIdEl = document.getElementById('pName');
+  const editLocalId = editIdEl.dataset.editId ? parseInt(editIdEl.dataset.editId) : null;
+  const editDbId = editIdEl.dataset.editDbId ? parseInt(editIdEl.dataset.editDbId) : null;
+  if (editLocalId) {
+    // UPDATE existing product
+    const p = DB.products.find(x => x.id === editLocalId);
+    if (p) {
+      p.name  = document.getElementById('pName').value.trim();
+      p.cat   = document.getElementById('pCat').value;
+      p.price = document.getElementById('pPrice').value;
+      p.badge = document.getElementById('pBadge').value.trim();
+      p.desc  = document.getElementById('pDesc').value.trim();
+      if (editDbId) { p._db_id = editDbId; dbSaveProduct(p); }
+      renderStorefront('all');
+      renderProductTable();
+      clearProductForm();
+      delete editIdEl.dataset.editId;
+      delete editIdEl.dataset.editDbId;
+      const s = document.getElementById('productSuccess');
+      if (s) { s.textContent = '◆ Product updated and saved to database'; s.style.display='block'; setTimeout(()=>{ s.style.display='none'; s.textContent=''; },4000); }
+      updateStorageCount();
+      return;
+    }
+  }
   var name  = document.getElementById('pName').value.trim();
   var cat   = document.getElementById('pCat').value;
   var price = document.getElementById('pPrice').value;
@@ -5221,6 +5097,7 @@ function addProduct() {
   };
 
   DB.products.push(p);
+  dbSaveProduct(p); // Save to Supabase
 
   // Re-render full storefront so new product appears with correct filtering
   renderStorefront('all');
@@ -5238,9 +5115,7 @@ function addProduct() {
   updateStorageCount();
 }
 
-// ══════════════════════════════════════════════════════════════
 //  ADD SERVICE from admin — new admin service tab functionality
-// ══════════════════════════════════════════════════════════════
 
 function addService() {
   var name  = document.getElementById('svcName').value.trim();
@@ -5258,6 +5133,7 @@ function addService() {
   };
 
   DB.services.push(svc);
+  dbSaveService(svc); // Save to Supabase
   renderServicesGrid();
   renderServiceTable();
 
@@ -5272,6 +5148,8 @@ function addService() {
 
 function deleteService(id) {
   if (!confirm('Delete this service?')) return;
+  const svc = DB.services.find(s => s.id === id);
+  if (svc && (svc._db_id || svc.id)) dbDeleteService(svc._db_id || svc.id);
   DB.services = DB.services.filter(function(s){ return s.id !== id; });
   renderServicesGrid();
   renderServiceTable();
@@ -5293,11 +5171,317 @@ function renderServiceTable() {
     '</tr>';
   }).join('');
 }
-</script>
 
-<!-- ═══ PAYMENT / CHECKOUT MODAL ═══ -->
+//  STRIPE PAYMENTS — Full Integration
+
+// ⚙ CONFIGURATION — Replace with your real keys after Stripe signup
+const STRIPE_CONFIG = {
+  // ── Paste your Stripe publishable key here ──────────────────
+  // Get from: stripe.com → Dashboard → Developers → API Keys
+  publishableKey: 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE',
+  // ── Your Railway backend endpoint ───────────────────────────
+  paymentIntentEndpoint: 'https://kosher-moor-website-production.up.railway.app/api/stripe/create-payment-intent',
+  // Texas sales tax rate (Dallas County)
+  taxRate: 0.0825,
+  currency: 'usd',
+  successUrl: 'https://thekoshermoor.com/?order=success',
+  cancelUrl:  'https://thekoshermoor.com/?order=cancelled',
+};
+
+// ── Stripe Elements appearance — matches KM gold/obsidian palette ──
+const STRIPE_APPEARANCE = {
+  theme: 'night',
+  variables: {
+    colorPrimary:         '#C8A951',
+    colorBackground:      '#0f0f0d',
+    colorText:            '#F5EDD8',
+    colorDanger:          '#ff6b6b',
+    colorTextPlaceholder: '#8a7d5a',
+    fontFamily:           "'Cormorant Garamond', Georgia, serif",
+    fontSizeBase:         '15px',
+    spacingUnit:          '4px',
+    borderRadius:         '2px',
+  },
+  rules: {
+    '.Input': {
+      border:          '1px solid rgba(200,169,81,0.3)',
+      backgroundColor: 'rgba(255,255,255,0.04)',
+      color:           '#F5EDD8',
+      boxShadow:       'none',
+    },
+    '.Input:focus': {
+      border:    '1px solid rgba(200,169,81,0.7)',
+      boxShadow: '0 0 0 2px rgba(200,169,81,0.12)',
+    },
+    '.Label': {
+      color:       '#C8A951',
+      fontFamily:  "'Space Mono', monospace",
+      fontSize:    '0.65rem',
+      letterSpacing: '0.08em',
+      textTransform: 'uppercase',
+    },
+    '.Tab': {
+      border:          '1px solid rgba(200,169,81,0.2)',
+      backgroundColor: 'rgba(255,255,255,0.03)',
+      color:           '#8a7d5a',
+    },
+    '.Tab:hover': {
+      color:           '#F5EDD8',
+      backgroundColor: 'rgba(200,169,81,0.08)',
+    },
+    '.Tab--selected': {
+      border:          '1px solid rgba(200,169,81,0.6)',
+      backgroundColor: 'rgba(200,169,81,0.1)',
+      color:           '#C8A951',
+    },
+    '.Error': { color: '#ff6b6b' },
+  },
+};
+
+let stripeElements = null;
+let stripePaymentElement = null;
+
+// Mount Stripe Payment Element into #stripe-payment-element
+async function mountStripePaymentElement(amountCents) {
+  const stripe = getStripe();
+  if (!stripe || !amountCents) return;
+
+  try {
+    // Create PaymentIntent on backend
+    const res = await fetch(STRIPE_CONFIG.paymentIntentEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount: amountCents, currency: STRIPE_CONFIG.currency }),
+    });
+    const { clientSecret } = await res.json();
+    if (!clientSecret) return;
+
+    stripeElements = stripe.elements({ appearance: STRIPE_APPEARANCE, clientSecret });
+    stripePaymentElement = stripeElements.create('payment', {
+      layout: { type: 'tabs', defaultCollapsed: false },
+      wallets: { applePay: 'auto', googlePay: 'auto' },
+      fields: { billingDetails: { name: 'never' } }, // we collect name ourselves
+    });
+    stripePaymentElement.mount('#stripe-payment-element');
+
+    stripePaymentElement.on('change', (e) => {
+      const el = document.getElementById('stripe-element-errors');
+      if (el) el.textContent = e.error ? e.error.message : '';
+    });
+  } catch(err) {
+    console.warn('Stripe Elements mount error:', err);
+  }
+}
+
+// Stripe product price IDs — create these in Stripe Dashboard → Products
+// Then replace the placeholder IDs below
+const STRIPE_PRICES = {
+  // Format: 'product-name': 'price_XXXXX'
+  // Create at: stripe.com → Products → Add Product
+  'Ancestral Rooibos Blend':    'price_REPLACE_WITH_STRIPE_PRICE_ID',
+  'Moorish Hibiscus Supreme':   'price_REPLACE_WITH_STRIPE_PRICE_ID',
+  'Lions Mane Elixir':          'price_REPLACE_WITH_STRIPE_PRICE_ID',
+  'Blackseed Oil Tincture':     'price_REPLACE_WITH_STRIPE_PRICE_ID',
+  'Sovereign Ashwagandha':      'price_REPLACE_WITH_STRIPE_PRICE_ID',
+  'Moringa Power Capsules':     'price_REPLACE_WITH_STRIPE_PRICE_ID',
+  'Sovereign Emblem Tee':       'price_REPLACE_WITH_STRIPE_PRICE_ID',
+  'Sovereign Lawn Package':     'price_REPLACE_WITH_STRIPE_PRICE_ID',
+};
+
+let stripeInstance = null;
+
+function getStripe() {
+  if (!stripeInstance && window.Stripe && STRIPE_CONFIG.publishableKey !== 'pk_test_YOUR_STRIPE_PUBLISHABLE_KEY_HERE') {
+    stripeInstance = window.Stripe(STRIPE_CONFIG.publishableKey);
+  }
+  return stripeInstance;
+}
+
+// Stripe Checkout — redirects to Stripe's hosted page
+// Use this when you have a backend. For no-backend, use Payment Links.
+async function stripeCheckout(productName, priceUsd, qty) {
+  var stripe = getStripe();
+  if (!stripe) {
+    // Stripe not configured yet — fall back to built-in checkout
+    openCheckout({ name: productName, price: priceUsd, qty: qty || 1 });
+    return;
+  }
+
+  // Check if we have a Stripe price ID for this product
+  var priceId = STRIPE_PRICES[productName];
+  if (!priceId || priceId.includes('REPLACE')) {
+    // No price ID set — use built-in checkout
+    openCheckout({ name: productName, price: priceUsd, qty: qty || 1 });
+    return;
+  }
+
+  try {
+    // Option A: Use Stripe Payment Links (no backend needed)
+    // Create at stripe.com/payment-links and set the URL below
+    // window.location.href = 'https://buy.stripe.com/YOUR_PAYMENT_LINK';
+
+    // Option B: Use backend endpoint
+    var res = await fetch(STRIPE_CONFIG.checkoutEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        priceId: priceId,
+        qty: qty || 1,
+        successUrl: STRIPE_CONFIG.successUrl,
+        cancelUrl: STRIPE_CONFIG.cancelUrl,
+      })
+    });
+    var session = await res.json();
+    await stripe.redirectToCheckout({ sessionId: session.id });
+  } catch(err) {
+    console.warn('Stripe checkout error, falling back:', err);
+    openCheckout({ name: productName, price: priceUsd, qty: qty || 1 });
+  }
+}
+
+// Check for Stripe success/cancel redirect
+(function checkStripeReturn() {
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('order') === 'success') {
+    setTimeout(function() {
+      var s = document.getElementById('paySuccess');
+      if (!s) {
+        // Show a floating banner
+        var banner = document.createElement('div');
+        banner.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);z-index:9999;background:rgba(29,74,46,0.95);border:1px solid var(--gold);padding:1rem 2rem;font-family:Space Mono,monospace;font-size:0.6rem;color:var(--gold);letter-spacing:0.1em;text-align:center;';
+        banner.innerHTML = '◆ ORDER CONFIRMED — SOVEREIGNTY ACHIEVED ◆<br><span style="color:var(--cream);font-size:0.5rem;">Confirmation sent to your email. Thank you, beloved.</span>';
+        document.body.appendChild(banner);
+        setTimeout(function(){ banner.remove(); }, 6000);
+      }
+      // Clear URL params
+      window.history.replaceState({}, '', window.location.pathname);
+    }, 500);
+  }
+  if (params.get('order') === 'cancelled') {
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+})();
+
+//  EMAILJS — Real Email Sending (no backend needed)
+
+// ⚙ CONFIGURATION — Get these from emailjs.com (free up to 200 emails/mo)
+// Setup: emailjs.com → Sign up → Add Service (Gmail) → Add Template → Copy IDs
+const EMAILJS_CONFIG = {
+  publicKey:   'YOUR_EMAILJS_PUBLIC_KEY',      // Account → API Keys
+  serviceId:   'YOUR_EMAILJS_SERVICE_ID',      // Email Services → Gmail/Outlook
+  welcomeTemplateId: 'YOUR_WELCOME_TEMPLATE_ID', // Email Templates → Welcome
+  orderTemplateId:   'YOUR_ORDER_TEMPLATE_ID',   // Email Templates → Order Confirm
+};
+
+let emailJSReady = false;
+
+function initEmailJS() {
+  if (window.emailjs && EMAILJS_CONFIG.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY') {
+    window.emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+    emailJSReady = true;
+  }
+}
+
+// Send welcome email to new lead
+function sendWelcomeEmail(lead) {
+  if (!emailJSReady || !lead.email) return;
+  window.emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.welcomeTemplateId, {
+    to_name:  lead.name || 'Beloved',
+    to_email: lead.email,
+    from_name: 'The Kosher Moor',
+    reply_to:  'info@thekoshermoor.com',
+    subject:   'Welcome to The Kosher Moor — Your Sovereignty Starts Now',
+    message:   'Peace & Blessings ' + (lead.name || 'Beloved') + ',\n\nThank you for joining The Kosher Moor. Use code SOVEREIGN15 for 15% off your first order.\n\nExplore our sacred collection at thekoshermoor.com.\n\nRise & Reign,\nThe Kosher Moor Team\n📞 469-928-9975',
+    promo_code: 'SOVEREIGN15',
+    site_url:   'https://thekoshermoor.com',
+    phone:      '469-928-9975',
+  }).catch(function(err) { console.warn('EmailJS welcome email error:', err); });
+}
+
+// Send order confirmation email
+function sendOrderConfirmEmail(name, email, orderRef, total, items) {
+  if (!emailJSReady || !email) return;
+  window.emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.orderTemplateId, {
+    to_name:    name,
+    to_email:   email,
+    from_name:  'The Kosher Moor',
+    reply_to:   'info@thekoshermoor.com',
+    order_ref:  orderRef,
+    order_total: '$' + total,
+    order_items: items,
+    site_url:   'https://thekoshermoor.com',
+    phone:      '469-928-9975',
+  }).catch(function(err) { console.warn('EmailJS order email error:', err); });
+}
+
+//  PATCH saveLead — fire welcome email on every new lead
+var _baseSaveLead = saveLead;
+saveLead = function(lead) {
+  var isNew = !DB.leads || !DB.leads.find(function(l) {
+    return l.email && lead.email && l.email.toLowerCase() === lead.email.toLowerCase();
+  });
+  _baseSaveLead(lead);
+  if (isNew && lead.email) {
+    sendWelcomeEmail(lead);
+  }
+};
+
+//  PATCH submitOrder — fire order confirmation email
+var _baseSubmitOrder = submitOrder;
+submitOrder = function() {
+  // We intercept AFTER the order is placed — hook via paySuccess display
+  var origSuccess = window.showCheckoutError; // keep reference
+  _baseSubmitOrder.call(this);
+  // If successful, paySuccess will show — detect and fire email
+  setTimeout(function() {
+    var s = document.getElementById('paySuccess');
+    if (s && s.style.display !== 'none' && s.innerHTML.includes('KM-')) {
+      var nameEl = document.getElementById('pay_ship_name');
+      var emailEl = document.getElementById('pay_ship_email');
+      var refMatch = s.innerHTML.match(/KM-[A-Z0-9]+/);
+      var totalMatch = s.innerHTML.match(/\$[\d.]+/);
+      var items = currentCart.map(function(i){ return i.name + ' x' + (i.qty||1); }).join(', ');
+      if (nameEl && emailEl && refMatch) {
+        sendOrderConfirmEmail(
+          nameEl.value, emailEl.value,
+          refMatch[0], totalMatch ? totalMatch[0] : '—', items
+        );
+      }
+    }
+  }, 1500);
+};
+
+function checkIntegrationStatus() {
+  // Stripe status
+  var sEl = document.getElementById('stripe-status-text');
+  if (sEl) {
+    if (STRIPE_CONFIG.publishableKey.includes('YOUR_STRIPE')) {
+      sEl.innerHTML = '<span style="color:#e87070;">⚠ Not configured — add your publishable key</span>';
+    } else if (window.Stripe) {
+      sEl.innerHTML = '<span style="color:#4CAF50;">✓ Stripe.js loaded · Test mode active</span>';
+    } else {
+      sEl.innerHTML = '<span style="color:#FFA500;">⏳ Loading Stripe.js...</span>';
+    }
+  }
+  // EmailJS status
+  var eEl = document.getElementById('emailjs-status-text');
+  if (eEl) {
+    if (EMAILJS_CONFIG.publicKey.includes('YOUR_EMAILJS')) {
+      eEl.innerHTML = '<span style="color:#e87070;">⚠ Not configured — add EmailJS keys</span>';
+    } else if (window.emailjs && emailJSReady) {
+      eEl.innerHTML = '<span style="color:#4CAF50;">✓ EmailJS connected · Welcome emails active</span>';
+    } else {
+      eEl.innerHTML = '<span style="color:#FFA500;">⏳ Initializing...</span>';
+    }
+  }
+}
+// Run on admin panel open and periodically
+setInterval(function() {
+  if (document.getElementById('stripe-status-text')) checkIntegrationStatus();
+}, 2000);
+</script>
 <div class="modal-overlay" id="paymentModal">
-  <div class="modal-box" style="max-width:640px;">
+  <div class="modal-box">
     <div class="modal-header">
       <span class="modal-header-icon">💳</span>
       <div class="modal-header-info">
@@ -5342,17 +5526,12 @@ function renderServiceTable() {
       <!-- Payment forms (swapped per method) -->
       <div id="payFormContainer">
 
-        <!-- Credit/Debit Card form -->
+        <!-- Stripe Payment Element — Card, Apple Pay, Google Pay, Afterpay in one -->
         <div id="pf-card" class="pay-form active-form">
           <div class="frow full"><div class="fg"><label>Name on Card</label><input id="pay_name" placeholder="Full name as it appears on card"></div></div>
-          <div class="frow full"><div class="fg"><label>Card Number</label><input id="pay_card" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCardNum(this)"></div></div>
-          <div class="frow">
-            <div class="fg"><label>Expiry</label><input id="pay_exp" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)"></div>
-            <div class="fg"><label>CVV</label><input id="pay_cvv" placeholder="123" maxlength="4" type="password"></div>
-          </div>
-          <div class="frow full"><div class="fg"><label>Billing Zip</label><input id="pay_zip" placeholder="ZIP / Postal Code" maxlength="10"></div></div>
+          <div id="stripe-payment-element" style="margin-bottom:1rem;"></div>
+          <div id="stripe-element-errors" role="alert" style="color:#ff6b6b;font-family:'Space Mono',monospace;font-size:0.72rem;margin-bottom:0.8rem;min-height:1.2rem;"></div>
         </div>
-
         <!-- PayPal -->
         <div id="pf-paypal" class="pay-form" style="display:none;">
           <div style="text-align:center;padding:1.5rem;background:rgba(0,70,186,0.1);border:1px solid rgba(0,70,186,0.3);">
@@ -5457,10 +5636,10 @@ function renderServiceTable() {
         <div class="fg"><label>Email</label><input id="pay_ship_email" type="email" placeholder="your@email.com"></div>
       </div>
       <div class="frow full"><div class="fg"><label>Street Address</label><input id="pay_ship_addr" placeholder="123 Sovereign St"></div></div>
-      <div class="frow">
+      <div class="ship-row-split">
         <div class="fg"><label>City</label><input id="pay_ship_city" placeholder="City"></div>
-        <div class="fg"><label>State</label><input id="pay_ship_state" placeholder="TX"></div>
-        <div class="fg"><label>ZIP</label><input id="pay_ship_zip" placeholder="75001"></div>
+        <div class="fg"><label>State</label><input id="pay_ship_state" placeholder="TX" maxlength="2"></div>
+        <div class="fg"><label>ZIP</label><input id="pay_ship_zip" placeholder="75001" maxlength="5"></div>
       </div>
 
       <!-- Order total -->
@@ -5481,10 +5660,8 @@ function renderServiceTable() {
     </div>
   </div>
 </div>
-
-<!-- ═══ ADMIN LOGIN GATE (never publicly visible) ═══ -->
 <div class="modal-overlay" id="adminLoginModal" style="z-index:9999;">
-  <div class="modal-box" style="max-width:400px;">
+  <div class="modal-box">
     <div class="modal-header" style="background:rgba(10,10,8,0.95);">
       <span class="modal-header-icon">🔒</span>
       <div class="modal-header-info">
@@ -5546,3 +5723,4 @@ function renderServiceTable() {
 
 </body>
 </html>
+
