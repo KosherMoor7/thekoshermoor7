@@ -1114,10 +1114,23 @@
       max-height: 96dvh !important;
       border-radius: 8px 8px 0 0 !important;
       margin: 0 !important;
+      overflow-x: hidden !important;
     }
-    .modal-body { padding: 1rem !important; }
+    .modal-body {
+      padding: 0.8rem !important;
+      overflow-x: hidden !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+    }
     #adminModal .modal-box { max-height: 100dvh !important; border-radius: 0 !important; }
- .chat-panel { width: 340px; } }
+    .chat-panel { width: 340px; }
+    .frow { flex-direction: column !important; gap: 0.5rem !important; }
+    .fg { min-width: 0 !important; width: 100% !important; }
+    .ship-row-split { grid-template-columns: 1fr !important; gap: 0.5rem !important; }
+    #payMethodGrid { grid-template-columns: repeat(2, 1fr) !important; }
+    #checkoutBtn { width: 100% !important; font-size: 0.7rem !important; }
+    input, select, textarea { width: 100% !important; box-sizing: border-box !important; font-size: 16px !important; }
+  }
   .pay-method-card {
     background: rgba(200,169,81,0.05); border: 1px solid rgba(200,169,81,0.15);
     padding: 0.7rem 0.4rem; text-align: center; cursor: none;
