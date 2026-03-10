@@ -1,48 +1,211 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign Marketplace</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to Sovereign Marketplace</h1>
-    </header>
-    <section id="hero">
-        <h2>Your one-stop shop for everything!</h2>
-        <button>Shop Now</button>
-    </section>
-    <section id="products">
-        <h2>Featured Products</h2>
-        <div class="product-item">
-            <h3>Product 1</h3>
-            <p>Details about Product 1.</p>
-        </div>
-        <div class="product-item">
-            <h3>Product 2</h3>
-            <p>Details about Product 2.</p>
-        </div>
-    </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>Service 1: Description</p>
-        <p>Service 2: Description</p>
-    </section>
-    <div id="chat-widget">
-        <h2>Chat with us!</h2>
-    </div>
-    <section id="admin-dashboard">
-        <h2>Admin Dashboard</h2>
-        <p>Admin functionalities will be here.</p>
-    </section>
-    <section id="payment-integration">
-        <h2>Payment Integration</h2>
-        <p>Secure payment options available.</p>
-    </section>
-    <footer>
-        <p>&copy; 2026 Sovereign Marketplace</p>
-    </footer>
-</body>
-</html>
+<script>
+  // Force HTTPS — must run before anything else
+  if(location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1'){
+    location.replace('https:' + location.href.substring(location.protocol.length));
+  }
+</script>
+
+<meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://api.anthropic.com; img-src 'self' data: blob: https:; connect-src 'self' https:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kosher Moor — Sovereign Herbal Marketplace | Teas, Tinctures &amp; Consulting</title>
+  <meta name="description" content="The Kosher Moor is a sovereign herbal marketplace offering premium teas, tinctures, herbal supplements, merch, lawn care, mobile auto service, and transformative consulting. Heritage-driven. Purpose-built.">
+  <meta name="keywords" content="herbal tea, tinctures, herbal supplements, sovereign marketplace, lawn care, mobile tire service, business consulting, kosher moor">
+  <meta name="author" content="The Kosher Moor">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thekoshermoor.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thekoshermoor.com/">
+  <meta property="og:title" content="The Kosher Moor — Sovereign Herbal Marketplace">
+  <meta property="og:description" content="Heritage-driven herbal products, curated merch, lawn care, mobile tire service, and sovereign business consulting. Experience the Moor.">
+  <meta property="og:image" content="https://thekoshermoor.com/og-image.jpg"><!-- PUBLISH TASK: Upload a 1200x630px brand image to your server and update this URL -->
+  <meta property="og:site_name" content="The Kosher Moor">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Kosher Moor — Sovereign Marketplace">
+  <meta name="twitter:description" content="Herbal teas, tinctures, supplements, merch, lawn care, mobile tire service and business consulting.">
+  <meta name="twitter:image" content="https://thekoshermoor.com/og-image.jpg"><!-- PUBLISH TASK: Upload a 1200x630px brand image to your server and update this URL -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Store","name":"The Kosher Moor","url":"https://thekoshermoor.com","email":"info@thekoshermoor.com","sameAs":["https://instagram.com/thekoshermoor","https://facebook.com/thekoshermoor"],"description":"Sovereign herbal marketplace offering premium teas, tinctures, supplements, merch, lawn care, mobile tire service, and business consulting.","priceRange":"$$","currenciesAccepted":"USD","paymentAccepted":"Credit Card, PayPal, Cash App, Venmo, Zelle","openingHours":["Mo-Fr 09:00-19:00","Sa 10:00-18:00"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Sovereign Products and Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Product","name":"Herbal Teas and Blends"}},{"@type":"Offer","itemOffered":{"@type":"Product","name":"Tinctures and Elixirs"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Lawn Care"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile Tire Service"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Business Consulting"}}]}}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8A951;
+    --gold-light: #E8C96B;
+    --gold-dark: #8B6914;
+    --emerald: #1A4A2E;
+    --emerald-mid: #2D6B45;
+    --emerald-light: #3D8B5A;
+    --cream: #F5EDD8;
+    --cream-dark: #E8D9B8;
+    --obsidian: #0A0A08;
+    --charcoal: #1C1C18;
+    --text-light: #F0E6C8;
+    --text-muted: #A89060;
+    --shadow-gold: 0 0 40px rgba(200,169,81,0.3);
+    --shadow-deep: 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  body {
+    background: var(--obsidian);
+    color: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    cursor: none;
+    overflow-x: hidden;
+  }
+
+  /* CUSTOM CURSOR */
+  .cursor {
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 99999;
+    transform: translate(-50%,-50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 99998;
+    transform: translate(-50%,-50%);
+    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+    opacity: 0.5;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: 0.6;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 0 4rem;
+    background: linear-gradient(to bottom, rgba(10,10,8,0.98), transparent);
+    backdrop-filter: blur(2px);
+    border-bottom: 1px solid rgba(200,169,81,0.15);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 80px; max-width: 1600px; margin: 0 auto;
+  }
+  .nav-logo {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  }
+  .nav-logo-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 20px rgba(200,169,81,0.5);
+    line-height: 1;
+  }
+  .nav-logo-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem; letter-spacing: 0.3em;
+    color: var(--text-muted); text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none;
+    transition: color 0.3s;
+    position: relative; padding-bottom: 4px;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 1px; background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--gold); color: var(--obsidian);
+    border: none; padding: 0.6rem 1.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    cursor: none; transition: all 0.3s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 120px 2rem 4rem;
+    text-align: center;
+  }
+
+  /* Animated background */
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(29,74,46,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(200,169,81,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 40% at 80% 70%, rgba(200,169,81,0.06) 0%, transparent 50%),
+      var(--obsidian);
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: floatOrb 8s ease-in-out infinite;
+  }
+  .hero-orb-1 { width: 500px; height: 500px; background: rgba(29,74,46,0.3); top: -100px; left: -100px; animation-delay: 0s; }
+  .hero-orb-2 { width: 400px; height: 400px; background: rgba(200,169,81,0.12); top: 20%; right: -100px; animation-delay: -3s; }
+  .hero-orb-3 { width: 300px; height: 300px; background: rgba(29,74,46,0.2); bottom: 0; left: 30%; animation-delay: -5s; }
+
+  @keyframes floatOrb {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(30px,-20px) scale(1.05); }
+    66% { transform: translate(-20px,30px) scale(0.95); }
+  }
+
+  /* Decorative lines */
+  .hero-lines {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, rgba(200,169,81,0.2), transparent);
+    height: 1px;
+    animation: scanLine 6s linear infinite;
+  }
+  .hero-line:nth-child(1) { top: 20%; width: 100%; animation-delay: 0s; }
+  .hero-line:nth-child(2) { top: 50%; width: 100%; animation-delay: -2s; }
+  .hero-line:nth-child(3) { top: 80%; width: 100%; animation-delay: -4s; }
+  @keyframes scanLine {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 1000px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(200,169,81,0.1);
+    border: 1px solid rgba(200,169,81,0.3);
+    padding: 0.4rem 1.2rem;
+    font-family: 'Space Mono', monosp
