@@ -1132,6 +1132,69 @@
     #checkoutBtn { width: 100% !important; font-size: 0.7rem !important; }
     input, select, textarea { width: 100% !important; box-sizing: border-box !important; font-size: 16px !important; }
   }
+  /* ── Checkout form base layout ───────────────────────────── */
+  .frow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .frow.full { flex-direction: column; }
+  .fg {
+    flex: 1;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    box-sizing: border-box;
+  }
+  .fg label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .fg input, .fg select, .fg textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(200,169,81,0.25);
+    color: var(--cream);
+    padding: 0.6rem 0.8rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+  .fg input:focus, .fg select:focus {
+    border-color: var(--gold);
+  }
+  .fdiv {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    margin-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(200,169,81,0.15);
+  }
+  .ship-row-split {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .ship-row-split .fg { min-width: 0; }
+  /* ── end checkout form base ──────────────────────────────── */
+
   .pay-method-card {
     background: rgba(200,169,81,0.05); border: 1px solid rgba(200,169,81,0.15);
     padding: 0.7rem 0.4rem; text-align: center; cursor: none;
