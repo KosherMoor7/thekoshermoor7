@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1206,6 +1207,11 @@
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 0.5rem !important;
     margin-bottom: 1.2rem !important;
+  }
+  @media (max-width: 600px) {
+    #payMethodGrid {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
   }
   .pay-method-card {
     padding: 0.6rem 0.3rem !important;
@@ -5521,7 +5527,7 @@ setInterval(function() {
 
       <!-- Payment method selector -->
       <div class="fdiv">Choose Your Payment Method</div>
-      <div id="payMethodGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;margin-bottom:1.2rem;">
+      <div id="payMethodGrid" style="display:grid;gap:0.6rem;margin-bottom:1.2rem;">
         <div class="pay-method-card active-pay" onclick="selectPayMethod('card',this)" id="pm-card">
           <div class="pay-icon">💳</div><div class="pay-label">Credit / Debit Card</div>
         </div>
@@ -5537,13 +5543,11 @@ setInterval(function() {
         <div class="pay-method-card" onclick="selectPayMethod('zelle',this)" id="pm-zelle">
           <div class="pay-icon">🏦</div><div class="pay-label">Zelle</div>
         </div>
-        <div class="pay-label">Crypto</div>
-        </div>
         <div class="pay-method-card" onclick="selectPayMethod('apple',this)" id="pm-apple">
           <div class="pay-icon">🍎</div><div class="pay-label">Apple Pay</div>
         </div>
         <div class="pay-method-card" onclick="selectPayMethod('afterpay',this)" id="pm-afterpay">
-          <div class="pay-icon">📅</div><div class="pay-label">Afterpay / Buy Now Pay Later</div>
+          <div class="pay-icon">📅</div><div class="pay-label">Afterpay / BNPL</div>
         </div>
       </div>
 
